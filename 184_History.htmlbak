@@ -19,8 +19,8 @@
 	<link rel="stylesheet" href="css/jquery.selectbox.css-v2.css" tppabs="http://www.strathallan.co.uk/css/jquery.selectbox.css?v2" type="text/css" />
 	<link rel="stylesheet" href="css/jquery.jscrollpane.css" tppabs="http://www.strathallan.co.uk/css/jquery.jscrollpane.css" type="text/css" />
 	<link rel="stylesheet" href="css/fullcalendar.css" tppabs="http://www.strathallan.co.uk/css/fullcalendar.css" type="text/css" />
-	<link rel="stylesheet" href="js/fancybox/jquery.fancybox.css" tppabs="http://www.strathallan.co.uk/js/fancybox/jquery.fancybox.css" type="text/css" />
-	<link rel="stylesheet" href="js/datepicker/jquery-ui-1.9.2.custom.css" tppabs="http://www.strathallan.co.uk/js/datepicker/jquery-ui-1.9.2.custom.css" type="text/css" />
+	<link rel="stylesheet" href="/content/js/fancybox/jquery.fancybox.css" tppabs="http://www.strathallan.co.uk/js/fancybox/jquery.fancybox.css" type="text/css" />
+	<link rel="stylesheet" href="/content/js/datepicker/jquery-ui-1.9.2.custom.css" tppabs="http://www.strathallan.co.uk/js/datepicker/jquery-ui-1.9.2.custom.css" type="text/css" />
 	
 	<!--[if lt IE 9]>   
 	.sbOptions {		
