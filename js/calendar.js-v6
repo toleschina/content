@@ -1,0 +1,935 @@
+var eventStart = 0;
+
+var eventCount = 10;
+
+var eventTotal = 0;
+
+var date = new Date();
+
+var firstDay = new Date(date.getFullYear(), date.getMonth(), 1);
+
+var lastDay = new Date(date.getFullYear(), date.getMonth() + 1, 0);
+
+function setDateRangeForMonth() {
+
+    var date = new Date(firstDay);
+
+    firstDay = new Date(date.getFullYear(), date.getMonth(), 1);
+
+    lastDay = new Date(date.getFullYear(), date.getMonth() + 1, 0);
+
+}
+
+function nextMonth() {
+    
+    var date = new Date(firstDay);
+
+    if (date.getMonth() == 11) {
+
+        var date = new Date(date.getFullYear() + 1, 0, 1);
+
+    } else {
+
+        var date = new Date(date.getFullYear(), date.getMonth() + 1, 1);
+
+    }
+
+    return date;
+
+}
+
+function previousMonth() {
+    
+    var date = new Date(firstDay);
+
+    if (date.getMonth() == 0) {
+
+        var date = new Date(date.getFullYear() - 1, 11, 1);
+
+    } else {
+
+        var date = new Date(date.getFullYear(), date.getMonth() - 1, 1);
+        
+    }
+
+    return date;
+
+}
+
+var today = new Date();
+
+var fromDate = today.format('yyyy-mm-dd');
+
+var toDate = lastDay.format('yyyy-mm-dd');
+
+$(document).ready(function() {
+
+    if ( $('#calendar').length > 0 ) {
+
+        var sb_id_subcat = $('.calendar-filter-subcat').attr('sb');
+
+        $('#sbHolder_'+sb_id_subcat).hide();
+
+        var sb_id_team = $('.calendar-filter-team').attr('sb');
+
+        $('#sbHolder_'+sb_id_team).hide();
+
+        $('#calendar').fullCalendar({
+
+            eventRender: function(event, element, view) {
+
+                if(event.start.getMonth() != view.start.getMonth()) {
+
+                    return false;
+
+                }
+
+            },
+
+            dayClick: function(date, allDay, jsEvent, view) {
+
+                eventStart = 0;
+
+                $('#selected-date').val( date.format("yyyy-mm-dd") );
+
+                fromDate = date.format("yyyy-mm-dd");
+
+                toDate = date.format("yyyy-mm-dd");
+
+                //console.debug('fromDate:'+fromDate+'&toDate:'+toDate);
+
+                getResults(fromDate,toDate);
+
+                pausecomp(300);
+
+                $('.fc-widget-content').css('background', 'transparent');
+
+                $(this).css('background', 'transparent url(/images/calendar/calendar-highlight.png)');
+
+            },
+
+            eventClick: function(calEvent, jsEvent, view) {
+
+                eventStart = 0;
+
+                $('#selected-date').val( calEvent.start.format("yyyy-mm-dd") );
+
+                fromDate = calEvent.start.format("yyyy-mm-dd");
+
+                toDate = calEvent.start.format("yyyy-mm-dd");
+
+                //console.debug('fromDate:'+fromDate+'&toDate:'+toDate);
+
+                //console.debug('eventClick');
+
+                getResults(fromDate,toDate);
+
+                pausecomp(200);
+
+                $('.fc-widget-content').css('background', 'transparent');
+
+                $('.fc-widget-content').each(function(){
+                    if ( !$(this).attr('class').match( '/fc\-other\-month/' ) && $(this).children('div').children('.fc-day-number').html() == calEvent.start.format("dd") ) {
+                         $(this).css('background', 'transparent url(/images/calendar/calendar-highlight.png)');
+                    }
+                });
+
+            }
+
+        });
+
+        
+
+        initHandlers();
+
+        
+
+        $('#add-filter-button').click(function() {
+
+            addFilter();
+
+            return false;
+
+        });
+
+        
+
+        $('#show-filter-results').click(function() {
+
+            eventStart = 0;
+
+            getResults(fromDate,toDate);
+
+            $(document).scrollTop( $("#filter-results-anchor").offset().top );  
+
+            return false;
+
+        });
+
+        
+
+        $('#calendar-previous').click(function() {
+            
+            //console.debug('previous');
+            /*
+            setDateRangeForMonth();
+
+            previousMonth();
+            */
+            eventStart = Math.max(0, eventStart - eventCount);
+
+            getResults(fromDate,toDate);
+
+            return false;
+
+        });
+
+        
+
+        $('#calendar-next').click(function() {
+
+            //console.debug('next');
+
+            if(eventStart + eventCount < eventTotal) {
+                /*
+                setDateRangeForMonth();
+
+                nextMonth();
+                */
+                eventStart += eventCount;
+
+                getResults(fromDate,toDate);
+
+            }        
+
+            return false;
+
+        });
+
+
+        $('.fc-button-prev').click(function() {
+            
+            //console.debug('fc previous');
+
+            $('#selected-date').val("");
+
+            
+            setDateRangeForMonth();
+
+
+
+
+            //previousMonth();
+
+            //var date = new Date ( previousMonth() );
+            //
+            
+            var date = new Date(firstDay);
+
+            if (date.getMonth() == 0) {
+
+                var date = new Date(date.getFullYear() - 1, 11, 1);
+
+            } else {
+
+                var date = new Date(date.getFullYear(), date.getMonth() - 1, 1);
+                
+            }
+
+
+
+
+            firstDay = new Date(date.getFullYear(), date.getMonth(), 1);
+
+            lastDay = new Date(date.getFullYear(), date.getMonth() + 1, 0);
+
+            var fromDate = firstDay.format('yyyy-mm-dd');
+
+            var toDate = lastDay.format('yyyy-mm-dd');
+
+            //console.debug('fd:'+firstDay);
+        
+            eventStart = 0;
+
+            getResults(fromDate,toDate);
+
+            return false;
+
+        });
+
+        
+
+        $('.fc-button-next').click(function() {
+
+            //console.debug('fc next');
+
+            $('#selected-date').val("");
+
+            //if(eventStart + eventCount < eventTotal) {
+                
+                setDateRangeForMonth();
+
+                //var date = new Date ( nextMonth() );
+                
+
+                
+
+
+                var date = new Date(firstDay);
+
+                if (date.getMonth() == 11) {
+
+                    var date = new Date(date.getFullYear() + 1, 0, 1);
+
+                } else {
+
+                    var date = new Date(date.getFullYear(), date.getMonth() + 1, 1);
+
+                }
+
+
+
+                firstDay = new Date(date.getFullYear(), date.getMonth(), 1);
+
+                lastDay = new Date(date.getFullYear(), date.getMonth() + 1, 0);
+
+                var fromDate = firstDay.format('yyyy-mm-dd');
+
+                var toDate = lastDay.format('yyyy-mm-dd');
+
+                //console.debug('fd:'+firstDay);
+                
+                eventStart = 0;
+
+                getResults(fromDate,toDate);
+
+            //}        
+
+            return false;
+
+        });
+
+        
+
+        getResults(fromDate,toDate);
+
+    }
+
+});
+
+
+
+function initHandlers() {
+
+    $('.calendar-filter-cat').change(function() {
+
+        loadSubcats(this);
+
+    });
+
+    
+
+    $('.calendar-filter-subcat').change(function() {
+
+        loadTeams(this);
+
+    });
+
+}
+
+
+
+function loadSubcats(selectTag) {
+
+    var timestamp = new Date().getTime();
+
+    $.ajax({
+
+        cache : false,
+
+        url: '/calendar/get_subcategories.php?t='+timestamp,
+
+        method: 'get',
+
+        data: {
+
+            'catId': $(selectTag).val()
+
+        },
+
+        success: function(data) {
+
+            insertSubcategories(data, selectTag);
+
+        }
+
+    });
+
+}
+
+
+
+function loadTeams(selectTag) {
+
+    var timestamp = new Date().getTime();
+
+    $.ajax({
+
+        cache : false,
+
+        url: '/calendar/get_subcategories.php?t='+timestamp,
+
+        method: 'get',
+
+        data: {
+
+            'catId': $(selectTag).val()
+
+        },
+
+        success: function(data) {
+
+            insertTeams(data, selectTag);
+
+        }
+
+    });
+
+}
+
+
+
+function insertSubcategories(data, selectTag) {
+
+    data = JSON.parse(data);
+
+    html = '<option value="">Subcategory</option>' + buildSelectOptions(data);
+
+    $(selectTag).siblings('.calendar-filter-subcat').html(html).selectbox('detach').selectbox('attach');
+
+    resetTeams(selectTag);
+
+    var sb_id_subcat = $('.calendar-filter-subcat').attr('sb');
+
+    var sb_id_team = $('.calendar-filter-team').attr('sb');
+
+    if ( $('.calendar-filter-cat').val() == 2 ) 
+    {
+
+        $('#sbHolder_'+sb_id_subcat).show();
+        $('#sbHolder_'+sb_id_team).show();
+    }  
+    else
+    {
+
+        $('#sbHolder_'+sb_id_subcat).hide();
+        $('#sbHolder_'+sb_id_team).hide();
+    }          
+
+}
+
+
+
+function insertTeams(data, selectTag) {
+
+    data = JSON.parse(data);
+
+    html = '<option value="">Team</option>' + buildSelectOptions(data);
+
+    $(selectTag).siblings('.calendar-filter-team').html(html).selectbox('detach').selectbox('attach');
+
+    var sb_id_subcat = $('.calendar-filter-subcat').attr('sb');
+
+    var sb_id_team = $('.calendar-filter-team').attr('sb');
+
+    if ( $('.calendar-filter-cat').val() == 2 ) 
+    {
+        
+        $('#sbHolder_'+sb_id_subcat).show();
+        $('#sbHolder_'+sb_id_team).show();
+    }  
+    else
+    {
+
+        $('#sbHolder_'+sb_id_subcat).hide();
+        $('#sbHolder_'+sb_id_team).hide();
+    } 
+
+}
+
+
+
+function resetTeams(selectTag) {
+
+    html = '<option value="">Team</option>';
+
+    $(selectTag).siblings('.calendar-filter-team').html(html).selectbox('detach').selectbox('attach');
+
+}
+
+
+
+function buildSelectOptions(data) {
+
+    html = '';
+
+    for(i = 0; i < data.length; i++) {
+
+        html += '<option value="' + data[i].id + '">' + data[i].name + '</option>';
+
+    }
+
+    return html;
+
+}
+
+
+
+function addFilter() {
+
+    // Get selected values from filter
+
+    catId = $('#add-filter-row .calendar-filter-cat').val();    
+
+    if(catId <= 0) {
+
+        return;
+
+    }
+
+    catName = $('#add-filter-row .calendar-filter-cat option:selected').html();
+
+    subcatId = $('#add-filter-row .calendar-filter-subcat').val();
+
+    subcatName = $('#add-filter-row .calendar-filter-subcat option:selected').html();
+
+    teamId = $('#add-filter-row .calendar-filter-team').val();
+
+    teamName = $('#add-filter-row .calendar-filter-team option:selected').html();
+
+    
+
+    catOptions = $('#add-filter-row .calendar-filter-cat').html();
+
+    subcatOptions = $('#add-filter-row .calendar-filter-subcat').html();
+
+    teamOptions = $('#add-filter-row .calendar-filter-team').html();
+
+    
+
+    // Create and add html before "#add-filter-row"
+
+    html  = '';
+
+    html += '<div class="row filter-row">';
+
+	html +=	   '<select class="styled-select calendar-filter-cat">';
+
+	html +=		  catOptions;
+
+	html +=	   '</select>';
+
+	html +=	   '<select class="styled-select calendar-filter-subcat">';
+
+	html +=		  subcatOptions;
+
+	html +=	   '</select>';
+
+	html +=	   '<select class="styled-select calendar-filter-team">';
+
+	html +=		  teamOptions;
+
+	html +=	   '</select>';
+
+	html +=	   '<input type="submit" id="filter-results" value="Remove filter" class="remove-filter"/>';
+
+	html += '</div>';
+
+    $('#add-filter-row').before(html);
+
+    
+
+    // Set selected values
+
+    $('#add-filter-row').prev('.row').first().find('.calendar-filter-cat').val(catId);
+
+    $('#add-filter-row').prev('.row').first().find('.calendar-filter-subcat').val(subcatId);
+
+    $('#add-filter-row').prev('.row').first().find('.calendar-filter-team').val(teamId);
+
+    
+
+    // Initialise selectboxes
+
+    $('#calendar-filter select').selectbox();
+
+    
+
+    // Add click/change handlers
+
+    $('.remove-filter').click(function() {
+
+        $(this).closest('.row').remove();
+
+        return false;
+
+    });
+
+    initHandlers();
+
+    
+
+    // Reset filters for "add-filter-row"
+
+    $('#add-filter-row .calendar-filter-subcat').html('<option value="">Subcategory</option>').selectbox('detach').selectbox('attach');;
+
+    $('#add-filter-row .calendar-filter-team').html('<option value="">Team</option>').selectbox('detach').selectbox('attach');;
+
+    $('#add-filter-row .calendar-filter-cat').val('').selectbox('detach').selectbox('attach');;
+
+}
+
+
+
+function getResults(fromDate,toDate) {
+
+    //console.debug('getResults');
+
+    startCalendarLoadingAnimation();
+
+    var timestamp = new Date().getTime();
+
+    var ajaxData = {
+
+        filters: getFilters(),
+
+        start: eventStart,
+
+        count: eventCount,
+        
+        fromDate: fromDate,
+
+        toDate: toDate
+        
+
+    };
+
+    //console.debug(ajaxData);
+
+    $.ajax({
+
+        url: '/calendar/get_events.php?t='+timestamp,
+
+        method: 'get',
+
+        data: ajaxData,
+
+        success: function(data) {
+
+            insertEvents(data);
+
+            updatePagination(data);
+
+            endCalendarLoadingAnimation();
+
+        }
+
+    });
+
+}
+
+var result;
+
+function getUnfilteredResults() {
+
+    //console.debug('getUnfilteredResults');
+
+    var filters = new Array();
+
+    var timestamp = new Date().getTime();
+
+    $.ajax({
+
+        cache : false,
+
+        url: '/calendar/get_events.php?t='+timestamp,
+
+        method: 'get',
+
+        data: {
+
+            filters: removeDateFromFilters(getFilters()),
+
+            start: eventStart,
+
+            count: eventCount
+            /*
+            fromDate: fromDate,
+
+            toDate: toDate
+            */
+
+        },
+
+        success: function(data) {
+
+            data = JSON.parse(data);
+            addEventsToCalendar(data.counts);
+            
+        }
+
+    });
+
+}
+
+
+
+function getFilters() {
+
+    $filterRows = $('.filter-row');
+
+    
+
+    // Get values of filters and if not empty, push to filters array
+
+    filters = new Array();
+
+    for(i = 0; i < $filterRows.length; i++) {
+
+        catId = $($filterRows[i]).find('.calendar-filter-cat').val();
+
+        subcatId = $($filterRows[i]).find('.calendar-filter-subcat').val();
+
+        teamId = $($filterRows[i]).find('.calendar-filter-team').val();
+
+        event_date = $('#selected-date').val();
+
+        //if(catId > 0) {        
+
+            filters.push({
+
+                'catId': catId,
+
+                'subcatId': subcatId,
+
+                'teamId': teamId,
+
+                'event_date': event_date
+
+            });
+
+        //}
+
+    }
+
+    return filters;
+
+}
+
+function removeDateFromFilters ( filters ) {
+
+    filters[0]['event_date'] = '';
+
+    return filters;
+
+}
+
+function insertEvents(eventsObject) {
+
+    eventsObject = JSON.parse(eventsObject);
+
+    events = eventsObject.events;
+
+    html = '';
+
+    for(i = 0; i < events.length; i++) {
+
+        html += buildEventListing(events[i], i % 2 == 1 ? 'alt' : '');
+
+    }
+
+    $('#calendar-results').html(html);
+
+    $('.file-link').click(function(event) {
+        console.log('foobar');
+        $(this).css('display','block');
+    });
+
+    $('#calendar-results .item a').click(function() {	
+
+		//$(this).parent().find('.controls').find('a').toggle();	
+
+		$(this).parent().parent().find('.content').slideToggle();		
+
+	});
+
+    getUnfilteredResults();
+
+    //addEventsToCalendar(getUnfilteredResults().counts);
+
+}
+
+
+
+function buildEventListing(event, alt) {
+
+    html  = '';
+
+    html += '<div class="item ' + alt + '" id="event-item-'+event.id+'">';
+
+	html +=	   '<h4><span class="date"> ' + event.event_date + ' </span>'  + event.title + '</h4>';
+
+	html +=    '<div class="content">';
+	
+	html +=    '<span class="time">Time: '  + (event.event_time.substring(0, 2) != "00" ? event.event_time.substring(0, 5 ) : '')+  '</span> '
+
+    html +=        '<p>' + event.description + '</p>';
+
+    if ( event.file_1 != "" ) {
+
+	   html +=        '<p><a class="file-link" target="_blank" href="/files/'+event.file_1+'" title="">Download '+event.file_1_name+'</a></p>';
+
+    }
+
+    if ( event.file_2 != "" ) {
+
+       html +=        '<p><a class="file-link" target="_blank" href="/files/'+event.file_2+'" title="">Download '+event.file_2_name+'</a></p>';
+
+    }
+
+    if ( event.file_3 != "" ) {
+
+       html +=        '<p><a class="file-link" target="_blank" href="/files/'+event.file_3+'" title="">Download '+event.file_3_name+'</a></p>';
+
+    }
+
+    if ( event.file_4 != "" ) {
+
+       html +=        '<p><a class="file-link" target="_blank" href="/files/'+event.file_4+'" title="">Download '+event.file_4_name+'</a></p>';
+
+    }
+
+    if ( event.file_5 != "" ) {
+
+       html +=        '<p><a class="file-link" target="_blank" href="/files/'+event.file_5+'" title="">Download '+event.file_5_name+'</a></p>';
+
+    }
+
+    if ( event.file_6 != "" ) {
+
+       html +=        '<p><a class="file-link" target="_blank" href="/files/'+event.file_6+'" title="">Download '+event.file_6_name+'</a></p>';
+
+    }
+
+    if ( event.file_7 != "" ) {
+
+       html +=        '<p><a class="file-link" target="_blank" href="/files/'+event.file_7+'" title="">Download '+event.file_7_name+'</a></p>';
+
+    }
+
+    if ( event.file_8 != "" ) {
+
+       html +=        '<p><a class="file-link" target="_blank" href="/files/'+event.file_8+'" title="">Download '+event.file_8_name+'</a></p>';
+
+    }
+
+    if ( event.file_9 != "" ) {
+
+       html +=        '<p><a class="file-link" target="_blank" href="/files/'+event.file_9+'" title="">Download '+event.file_9_name+'</a></p>';
+
+    }
+
+    if ( event.file_10 != "" ) {
+
+       html +=        '<p><a class="file-link" target="_blank" href="/files/'+event.file_10+'" title="">Download '+event.file_10_name+'</a></p>';
+
+    }
+
+	html +=    '</div>';
+
+    if ( event.description != "" ) {
+
+    	html +=    '<div class="controls">';
+
+    	html +=        '<a class="open">Read more</a>';
+
+    	html +=        '<a class="close">Close</a>';
+
+    	html +=    '</div>';
+
+    } else if ( event.event_time != ''){
+
+    	html +=    '<div class="controls">';
+
+    	html +=        '<a class="open">Read more</a>';
+
+    	html +=        '<a class="close">Close</a>';
+
+    	html +=    '</div>';
+    	
+    }
+
+	html += '</div>';
+
+    return html;
+
+}
+
+
+
+function addEventsToCalendar(eventDateCounts) { 
+
+    // Add event objects to calendar
+
+    $('#calendar').fullCalendar('removeEvents');
+
+    for(key in eventDateCounts) {
+
+        newEvent = {
+
+            title: String(eventDateCounts[key]['count']),
+
+            start: String(eventDateCounts[key]['timestamp'])
+
+        };
+
+        $('#calendar').fullCalendar('renderEvent', newEvent, true);
+
+    }
+
+}
+
+
+
+function startCalendarLoadingAnimation() {
+
+    $('#calendar .fc-content, #calendar-results').css('opacity', '0.3');
+
+}
+
+
+
+function endCalendarLoadingAnimation() {
+
+    $('#calendar .fc-content, #calendar-results').css('opacity', '1.0');
+
+}
+
+
+
+function updatePagination(data) {
+
+    var data = JSON.parse(data);
+
+    var queryMeta = data.meta;
+
+    eventTotal = queryMeta.total;
+    
+
+    var startString = parseInt(eventStart + 1) + ' to ' + (eventTotal < eventStart + eventCount ? eventTotal : parseInt(eventStart + eventCount));
+
+    $('#pagination-start').html(startString);
+
+    $('#pagination-total').html(eventTotal);
+
+}

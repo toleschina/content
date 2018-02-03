@@ -1,0 +1,239 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if IE 9]>    <html class="no-js ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+   
+   	<title>关于我们 | Strathallan School斯特拉斯艾伦私立学校官网 </title>
+	<meta charset="utf-8" />
+			<meta name="robots" content="index, follow" />
+		
+	<meta name="description" content="Strathallan School is one of Scotland\'s leading independent boarding and day schools for girls and boys aged 9-18. Find out more about the school including its location, history, jobs and latest news online" />
+	<meta name="keywords" content="" />
+	<meta name="author" content="MTC Media" />
+	
+	<link rel="stylesheet" href="css/default.css-v5.css" tppabs="http://www.strathallan.co.uk/css/default.css?v5" media="screen" />
+	<link rel="stylesheet" href="css/print.css" tppabs="http://www.strathallan.co.uk/css/print.css" media="print" />
+	<link rel="stylesheet" href="css/jquery.selectbox.css-v2.css" tppabs="http://www.strathallan.co.uk/css/jquery.selectbox.css?v2" type="text/css" />
+	<link rel="stylesheet" href="css/jquery.jscrollpane.css" tppabs="http://www.strathallan.co.uk/css/jquery.jscrollpane.css" type="text/css" />
+	<link rel="stylesheet" href="css/fullcalendar.css" tppabs="http://www.strathallan.co.uk/css/fullcalendar.css" type="text/css" />
+	<link rel="stylesheet" href="js/fancybox/jquery.fancybox.css" tppabs="http://www.strathallan.co.uk/js/fancybox/jquery.fancybox.css" type="text/css" />
+	<link rel="stylesheet" href="js/datepicker/jquery-ui-1.9.2.custom.css" tppabs="http://www.strathallan.co.uk/js/datepicker/jquery-ui-1.9.2.custom.css" type="text/css" />
+	
+	<!--[if lt IE 9]>   
+	.sbOptions {		
+		max-height: 374px !important;
+	} 
+	<![endif]-->
+
+		
+	
+	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://www.strathallan.co.uk/images/touch-icon.png" />
+	<link rel="apple-touch-icon-precomposed" href="/images/touch-icon.png" />
+	<link rel="shortcut icon" href="/images/favicon.ico" />
+	
+	<link rel="profile" href="http://microformats.org/profile/hcard" />
+    
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+	<script>window.jQuery || document.write('<script src="js/jquery-1.7.1.min.js"/*tpa=http://www.strathallan.co.uk/js/jquery-1.7.1.min.js*/>\x3C/script>')</script>	
+	
+	
+</head>
+	<body class="">
+	       
+		<div id="wrapper">     
+		
+<!--#include file="t/headerWrapper.inc" -->
+
+
+			
+	   <div id="aboutWrapper" class="none">
+	
+	<div id="subbg" class="background-image slideshow-test">
+		<img src="pageimages/image0038.jpg" tppabs="http://www.strathallan.co.uk/pageimages/.jpg" width="2000" height="1000" alt=""/>
+	</div><!-- end of homebg -->
+	
+	<div id="content">
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+<br/><br/>
+
+<div id="carouselWrapper">
+<div class="news-ticker">
+		<div class="news-ticker-item-container">
+					
+						<div class="item">					
+				<p class="item-text">
+					<span class="date">14/06/13</span>
+					
+					<span class="excerpt">
+
+						新闻快递 
+					</span>
+
+					
+
+				</p>
+
+				<a href="#" tppabs="http://www.strathallan.co.uk/article.php?id=141" class="read-more ticker-read-more">
+					<img src="images/rightArrow-transparent.png" tppabs="http://www.strathallan.co.uk/images/rightArrow-transparent.png" alt="" />
+					阅读全文
+				</a>
+				<div style="clear:both"></div>
+			</div>
+						<div class="item" style="display:none">					
+				<p class="item-text">
+					<span class="date">14/06/13</span>
+					
+					<span class="excerpt">
+
+						暑期运动训练营 - 马球 &amp; 橄榄球
+					</span>
+
+					
+
+				</p>
+
+				<a href="#" tppabs="http://www.strathallan.co.uk/article.php?id=140" class="read-more ticker-read-more">
+					<img src="images/rightArrow-transparent.png" tppabs="http://www.strathallan.co.uk/images/rightArrow-transparent.png" alt="" />
+					阅读全文
+				</a>
+				<div style="clear:both"></div>
+			</div>
+					</div>
+	</div>
+	<div>
+
+		<div id="prev"></div>
+
+		<div id="carousel">
+
+			<ul>
+
+	            
+	                
+
+	            
+	                <li>
+
+	                    <a href="/207_Academic.html" tppabs="http://www.strathallan.co.uk/calendar.php">
+
+	                        <div class="overlay"><h2>教学一览</h2></div>
+
+							<div class="image"><img src="images/ctas/1363085445DDL_2912.jpg" tppabs="http://www.strathallan.co.uk/images/ctas/1363085445DDL_2912.jpg" width="290" height="180" alt="#" class="image" /></div>
+
+	                    </a>
+
+	                </li>
+
+	            
+
+
+	            
+	                <li>
+
+	                    <a href="sports-results.php.htm" tppabs="http://www.strathallan.co.uk/sports-results.php">
+
+	                        <div class="overlay"><h2>体育</h2></div>
+
+							<div class="image"><img src="images/ctas/1353423709home_slide2.jpg" tppabs="http://www.strathallan.co.uk/images/ctas/1353423709home_slide2.jpg" width="290" height="180" alt="#" class="image" /></div>
+
+	                    </a>
+
+	                </li>
+
+	            
+	                <li>
+
+	                    <a href="photo-gallery.php.htm" tppabs="http://www.strathallan.co.uk/photo-gallery.php">
+
+	                        <div class="overlay"><h2>相簿</h2></div>
+
+							<div class="image"><img src="images/ctas/1353423720home_slide3.jpg" tppabs="http://www.strathallan.co.uk/images/ctas/1353423720home_slide3.jpg" width="290" height="180" alt="#" class="image" /></div>
+
+	                    </a>
+
+	                </li>
+
+	            
+	                <li>
+
+	                    <a href="video-gallery.php.htm" tppabs="http://www.strathallan.co.uk/video-gallery.php">
+
+	                        <div class="overlay"><h2>视频</h2></div>
+
+							<div class="image"><img src="images/ctas/1363177194DDL_5994.jpg" tppabs="http://www.strathallan.co.uk/images/ctas/1363177194DDL_5994.jpg" width="290" height="180" alt="#" class="image" /></div>
+
+	                    </a>
+
+	                </li>
+
+	            
+	                <li>
+
+	                    <a href="311_TermDates.html" tppabs="http://www.strathallan.co.uk/311_TermDates.html">
+
+	                        <div class="overlay"><h2>学期安排</h2></div>
+
+							<div class="image"><img src="images/ctas/1363177508feature_terms_dates_homepage.jpg" tppabs="http://www.strathallan.co.uk/images/ctas/1363177508feature_terms_dates_homepage.jpg" width="290" height="180" alt="#" class="image" /></div>
+
+	                    </a>
+
+	                </li>
+
+	            
+	                <li>
+
+	                    <a href="map.php-about.htm" tppabs="http://www.strathallan.co.uk/map.php">
+
+	                        <div class="overlay"><h2>互动地图</h2></div>
+
+							<div class="image"><img src="images/ctas/1363177700feature_interactive_map_homepage.jpg" tppabs="http://www.strathallan.co.uk/images/ctas/1363177700feature_interactive_map_homepage.jpg" width="290" height="180" alt="#" class="image" /></div>
+
+	                    </a>
+
+	                </li>
+
+	            
+			</ul>
+
+	        
+
+		</div>
+
+		<div id="next"></div>
+	</div>
+
+	<div style="clear:both"></div>
+
+
+
+</div><!-- end of CarouselWrapper -->		
+
+
+
+
+	</div><!-- end of content -->
+</div><!-- end of homepageWrapper -->
+       		
+
+<!--#include file="t/footerUpper.inc" -->
+
+
+			</div><!-- end of wrapper -->
+			
+
+<!--#include file="t/footerLower.inc" -->
+<!--#include file="t/overlayWrapper.inc" -->
+<!--#include file="t/Plugins.inc" -->
+
+		
+		
+
+	
+   </body>
+
+</html>

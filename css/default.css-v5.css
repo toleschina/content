@@ -1,0 +1,3676 @@
+/*
+
+  Site Name: 
+  Site URL: 
+  Author: 
+  Version: 
+
+*/
+
+@font-face {
+    font-family: 'CantarellRegular';
+    src: url('/fonts/Cantarell-Regular-webfont.eot');
+    src: url('/fonts/Cantarell-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/fonts/Cantarell-Regular-webfont.woff') format('woff'),
+         url('/fonts/Cantarell-Regular-webfont.ttf') format('truetype'),
+         url('/fonts/Cantarell-Regular-webfont.svg#CantarellRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'CantarellBold';
+    src: url('/fonts/Cantarell-Bold-webfont.eot');
+    src: url('/fonts/Cantarell-Bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/fonts/Cantarell-Bold-webfont.woff') format('woff'),
+         url('/fonts/Cantarell-Bold-webfont.ttf') format('truetype'),
+         url('/fonts/Cantarell-Bold-webfont.svg#CantarellBold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+/*---------- CSS Reset ----------*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video{
+	margin: 0; padding: 0; border: 0; font-size: 100%; font: inherit; vertical-align: baseline;
+	}
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section{
+	display: block;
+	}
+body{
+	line-height: 1;
+	}
+ol, ul{
+	list-style: none;
+	}
+blockquote, q{
+	quotes: none;
+	}
+blockquote:before, blockquote:after,
+q:before, q:after{
+	content: ''; content: none;
+	}
+table{
+	border-collapse: collapse; border-spacing: 0;
+	}
+b{
+	font-weight: bold;
+	}
+select, input, textarea, button{
+	font-family: inherit; font-size: inherit;
+	}
+button, input, select, textarea{
+	margin: 0; padding: 0;
+	}
+::-webkit-input-placeholder{
+    color: #d0d0d0;
+	}
+:-moz-placeholder{
+    color: #d0d0d0;
+	}
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none; margin: 0;
+	}
+::-webkit-selection { 
+	background: rgb(23,119,175); color: rgb(250,250,250); text-shadow: none;
+	}
+::-moz-selection { 
+	background: rgb(23,119,175); color: rgb(250,250,250); text-shadow: none;
+	}
+::selection { 
+	background: rgb(23,119,175); color: rgb(250,250,250); text-shadow: none;
+	}
+input[type=submit]{
+    cursor: pointer;
+}
+
+/* ---------------------------- generic styles ---------------------------- */
+
+html {
+	overflow-y: scroll;
+}
+
+body {
+	font-family: Arial, Verdana, sans-serif;
+	font-size: 13px;
+	line-height: 1.462;
+	background-color: #000f2f; 
+	background: #001031 url(https://gs.meridian-mkt.cn/002/images/subpage_content_bg.png) repeat-y top center;
+	margin: 0px;
+	color: #cccccc;
+}
+
+body.home {
+	background: url(https://gs.meridian-mkt.cn/002/images/content_bg.png) repeat-y top center;
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+	line-height: 1;   
+}
+
+sub, sup {
+	font-size: 75%;
+	line-height: 0;
+	position: relative;
+}
+
+sup {
+	top: -0.5em;
+}
+
+sub {
+	bottom: -0.25em;
+}
+
+i , em{
+	font-style: italic;
+}
+
+b, strong {
+	font-weight: bold;
+}
+
+ins {
+	text-decoration: none;
+}
+
+del, s {
+	text-decoration: line-through;
+}
+
+a {
+	text-decoration: none;
+	color: #b79753;
+}
+
+.italic {
+	font-style:italic;
+}
+
+.bold {
+	font-weight: bold;
+}
+
+h2, .standardContent h1 {
+	font-family: 'CantarellRegular', Arial, Helvetica, sans-serif;
+	font-size: 1.923em;
+	color: #FFF;
+	line-height: 1.3;
+}
+
+h3 {
+	font-family: 'CantarellRegular', Arial, Helvetica, sans-serif;
+	font-size: 1.538em;
+	color: #FFF;
+	margin-bottom: 15px;
+}
+
+.button {
+	display: block;
+	width: 180px;
+	height: 25px;
+	background: url(https://gs.meridian-mkt.cn/002/images/button_bg.png) no-repeat;
+	color: #FFF;
+	margin-bottom: 10px;
+	padding-top: 5px;
+	padding-left: 10px;
+	font-size: 1.077em;
+}
+
+.button:hover {
+	background: url(https://gs.meridian-mkt.cn/002/images/button_bg_over.png) no-repeat;
+}
+
+.buttonBlue {
+	display: block;
+	width: 180px;
+	height: 25px;
+	background: url(https://gs.meridian-mkt.cn/002/images/button_blue_bg.png) no-repeat;
+	color: #FFF;
+	margin-bottom: 10px;
+	padding-top: 5px;
+	padding-left: 10px;
+	font-size: 1.077em;
+}
+
+.buttonBlue:hover {
+	background: url(https://gs.meridian-mkt.cn/002/images/button_blue_bg_over.png) no-repeat;
+}
+
+.italic {
+	font-style: italic;
+}
+
+.bold {
+	font-weight: bold;
+}
+
+.gold {
+	color: #FFF;
+}
+
+.grades {
+	font-weight: bold;
+	text-align: center;
+}
+
+
+
+
+/* ---------------------------- layout styles ---------------------------- */
+
+#wrapper {
+	width: 100%;
+	float: left;
+	background: #000E2F;
+}
+
+#headerWrapper {
+	position: relative;
+	display: block;
+	width: 100%;
+	height: 159px;
+	border-bottom: 1px solid #b79753;
+	background: #000E2F url(https://gs.meridian-mkt.cn/002/images/body_bg.png) repeat-y top center;
+	clear: both;
+	-moz-box-shadow: 0 2px 10px #171717;
+	-webkit-box-shadow: 0 2px 10px #171717;
+	box-shadow: 0 2px 10px #171717;
+}
+
+#header {
+	position: relative;
+	width: 950px;
+	margin: auto;
+}
+
+#header .logo {
+	position: absolute;
+	display: block;
+	width: 242px;
+	height: 60px;
+	top: 23px;
+	left: 10px;
+}
+
+.logo h1 {
+	text-indent: -5000px;
+}
+
+#topNav {
+	position: relative;
+	display: block;
+	width: 683px;
+	height: 30px;
+	float: right;
+	top: 25px;
+}
+
+#topNav ul {
+	display: inline;
+	list-style-type: none;
+	margin-right: 5px;
+	float: left;
+	margin-top: 13px;
+	margin-left: 14px;
+}
+
+#topNav li {
+	display: inline;
+	padding: 5px 14px;
+}
+
+#topNav li.spacer {
+	display: block;
+	float: left;
+	border-right: 1px solid #20396e;
+	height: 22px;
+}
+
+#topNav li a {
+	color: #b79753;
+	text-decoration: none;
+	font-size: 12px;
+}
+
+#topNav li a:hover {
+	color: #cccccc;
+}
+
+#topNav li .decreaseTxt {
+	font-size: 13px;
+}
+#topNav li .increaseTxt {
+	font-size: 17px;
+}
+
+
+#topNav .textField {
+	position: relative;
+	width: 130px;
+	height: 28px;
+	background: url(https://gs.meridian-mkt.cn/002/images/search_bg.png) repeat-x;
+	color: #fff;
+	border: 1px solid #20396e;
+	padding-left: 10px;
+	font-size: 0.923em;
+	margin-right: 0px;
+	float: left;
+	top: 10px;
+}
+
+#topNav .submitBtn {
+	position: relative;
+	width: 29px;
+	height: 30px;
+	float: right;
+	top: 10px;
+	background: #0D204E;
+}
+	
+#mainNav {
+	display: block;
+	width: 100%;
+	position: relative;
+	float: left;
+	top: 70px;
+	font-family: 'CantarellRegular', Arial, Helvetica, sans-serif;
+	font-size: 1.154em;
+	text-transform:uppercase;
+	color: #FFF;
+	background: url(https://gs.meridian-mkt.cn/002/images/header_bg.png) repeat-x 0px -101px;
+}
+
+#mainNav ul {
+}
+
+#mainNav li {
+	position: relative;
+	display: block;
+	float: left;
+}
+
+#mainNav li a {
+	display: block;
+	font-family: 'CantarellRegular', Arial, Helvetica, sans-serif;
+	font-size: 1.154em;
+	text-transform:uppercase;
+	color: #FFF;
+	float: left;
+	padding: 18px 38.12px;
+}
+
+#mainNav li:hover {
+	background-color: #011132;
+}
+
+#mainNav li.active a {
+	background-color: #011132;
+}
+
+#content {
+	position: relative;
+	width: 950px;
+	margin: auto;
+}
+	#content.home {
+		display: block;
+		float: left;
+		width: 100%;
+	}
+
+
+/* ---------------------------- Homepage ---------------------------- */
+
+
+#homebg {
+	position: absolute;
+	z-index: 0;
+	display: block;
+	width: 100%;
+	height: 660px;
+	overflow: hidden;
+	background: none;
+}
+	#homebg img {
+		left: 0; top: 0;
+		opacity: 0;
+		display: block;
+		float: left;
+	}
+	#homebg div {
+		width: 100%;
+		height: 660px;
+	}
+
+#homepageWrapper {
+	position: relative;
+	width: 100%;
+	background: #08225B url(https://gs.meridian-mkt.cn/002/images/icons/loader.gif) no-repeat center 315px;
+	clear: both;
+	float: left;
+}
+
+#homeMsg {
+	display: block;
+	float: left;
+	margin-left: 18px;
+	margin-top: 100px;
+	padding-left: 32px;
+	font-size: 1.923em;
+	color: #FFF;
+	font-family: 'CantarellRegular', Arial, Helvetica, sans-serif;
+	line-height: 1.2;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	text-shadow: 0px 0px 8px #000;
+	text-transform: uppercase;
+	height: 90px;
+}
+
+#homeContentBox {
+	position: relative;
+	display: block;
+	float: left;
+	width: 950px;
+	background-image: url(https://gs.meridian-mkt.cn/002/images/home_contentBox_bg.png);
+	background-repeat: repeat-x;
+	margin-top: 150px;
+	margin-bottom: 30px;
+
+	height: 255px;
+}
+
+#homeContentBox .left {
+	width: 400px;
+	height: 200px;
+	margin-top: 28px;
+	float: left;
+	margin-left: 39px;
+	border-right: 1px solid #272729;
+	padding-right: 35px;
+}
+
+#homeContentBox .left h2 {
+	margin-bottom: 15px;
+	font-size: 1.538em;
+}
+
+#homeContentBox .left p {
+	margin-bottom: 22px;
+}
+
+#homeContentBox .homeWriter {
+	font-family: 'CantarellRegular', Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	color: #FFF;
+}
+
+#homeContentBox .gold {
+	color: #b19857;
+}
+
+#homeContentBox .right {
+	position: relative;
+	width: 300px;
+	height: 200px;
+	margin-top: 28px;
+	float: left;
+	margin-left: 35px;
+}
+
+#homeContentBox .right h2 {
+	margin-bottom: 15px;
+	font-size: 24px;
+	text-transform: uppercase;
+}
+
+#homeContentBox .right p {
+	font-size: 1.077em;
+	font-weight: bold;
+	margin-bottom: 20px;
+}
+
+#homeContentBox .right .request {
+	margin-bottom: 5px;
+}
+
+#homeContentBox .prospectusImage {
+	position: absolute;
+	background: url(https://gs.meridian-mkt.cn/002/images/home_prospectus.png) no-repeat;
+	width: 180px;
+	height: 284px;
+    right: -180px;
+    top: -20px;
+	z-index: 2000;
+}
+
+
+
+@media all and (device-width: 768px) and (device-height: 1024px) and (orientation:portrait) {
+  	#homeContentBox .prospectusImage {
+    	right: -162px;
+	}
+	#homeContentBox .left {
+		width: 392px;
+	}
+}
+@media all and (device-width: 768px) and (device-height: 1024px) and (orientation:landscape) {
+  	#homeContentBox .prospectusImage {
+    	right: -162px;
+	}
+	#homeContentBox .left {
+		width: 392px;
+	}
+}
+
+
+#newsTicker, #featBox {
+	display: block;
+	float: left;
+	width: 100%;
+	background: #2d2d2d; /* Old browsers */
+	background: -moz-linear-gradient(top,  #2d2d2d 0%, #1b1b1b 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#2d2d2d), color-stop(100%,#1b1b1b)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #2d2d2d 0%,#1b1b1b 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #2d2d2d 0%,#1b1b1b 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #2d2d2d 0%,#1b1b1b 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #2d2d2d 0%,#1b1b1b 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2d2d2d', endColorstr='#1b1b1b',GradientType=0 ); /* IE6-9 */
+	height: 70px;
+	margin: 50px 0 20px 0;
+	box-shadow: inset 0 0 30px #1b1b1b;
+	min-height: 150px;
+}
+	#newsTicker h2, #featBox h2 {
+		display: block;
+		float: left;
+		border-left: 1px solid #B49952;
+		margin: 22px 0 0 49px;
+		padding-left: 20px;
+		text-transform: uppercase;
+		font-size: 1.538em;
+	}
+	#newsTicker .content, #featBox .content {
+		display: block;
+		float: right;
+		width: 95%;
+		margin: 20px 5% 0 0;
+		line-height: 1.2;
+	}
+	#newsTicker .content p {
+		margin: 0;
+	}
+		#newsTicker .content p span.date {
+			font-weight: bold;
+			color: #B49952;
+		}
+	#newsTicker a.read-more, #featBox a.read-more {
+		display: none;
+	}
+	
+	#news-featBoxes.on #newsTicker, #featBox {
+		width: 49%;
+		height: auto;
+		padding-bottom: 25px;
+	}
+		#news-featBoxes.on #newsTicker h2, #news-featBoxes.on #featBox h2 {
+			clear: both;
+			width: 86%;
+			padding: 0;
+			margin: 25px 0 20px 9%;
+			padding-left: 3%;
+			font-size: 1.538em;
+		}
+		#news-featBoxes.on #newsTicker .content, #news-featBoxes.on #featBox .content {
+			margin: 0; padding: 0 9%;
+			width: 82%;
+		}
+			#news-featBoxes.on #newsTicker .content p, #news-featBoxes.on #featBox .content p {
+				margin-bottom: 15px;
+			}
+			#news-featBoxes.on #featBox .content p:last-child {
+				margin-bottom: 0px;
+			}
+		#news-featBoxes.on #newsTicker a.read-more {
+			display: block;
+			float: left;
+			color: #FFF;
+			background: url(https://gs.meridian-mkt.cn/002/images/icons/arrow_gold_large.png) no-repeat right center;
+			padding-right: 15px;
+			margin-top: -1px;
+		}
+		
+#news-featBoxes.on #newsTicker .slides_container {
+	position: relative;
+	display: block;
+	float: left;
+	width: 100% !important;
+}
+
+#newsTicker .slides_container {
+	float: right;
+	width:75% !important;
+}
+		
+#news-featBoxes #featBox {
+	display: none;
+}
+#news-featBoxes.on #featBox {
+	display: block;
+	float: right;
+}
+
+#carouselWrapper {
+	display: block;
+	float: left;
+	width: 950px;
+	height: 180px;
+	background: none;
+	margin-top: 50px;
+}
+
+#carousel {
+	width: 925px;
+	height: 180px;
+	float: left;
+	overflow: hidden;
+	margin-left: 24px;
+}
+
+#carousel ul {
+	display: block;
+	float: left;
+	width: 100%:
+}
+
+#carousel ul li {
+	position: relative;
+	display: block;
+	float: left;
+	margin-right: 14px;
+}
+	#carousel ul li .image {
+		display: block;
+		float: left;
+		z-index: 1;
+	}
+	#carousel ul li .overlay {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		background: url(https://gs.meridian-mkt.cn/002/images/homepage/homeslider_overlay1.png) no-repeat 0 0;
+		z-index: 2;
+	}
+	#carousel ul li .overlay h2 {
+		text-transform: uppercase;
+		border-left: 1px solid #b99652;
+		padding: 10px 0 10px 15px;
+		margin-left: 20px;
+		line-height: 1.2;
+		width: 69%;
+		text-shadow: 0 0 4px #000;
+		margin-top: 90px;
+		min-height: 48px;
+		font-size: 1.538em;
+	}
+	#carousel ul li:hover .overlay{
+		background: url(https://gs.meridian-mkt.cn/002/images/homepage/homeslider_overlay2.png) no-repeat 0 0;
+	}
+
+#prev, #next {
+	position: absolute;
+	display: block;
+	height: 180px;
+	width: 30px;
+	background-image: url(https://gs.meridian-mkt.cn/002/images/slider_prev.png);
+	background-repeat: no-repeat;
+	cursor: pointer;
+	z-index: 50;
+}
+
+#prev {
+	left: 0px;
+}
+
+#next {
+	position: absolute;
+	right: 0px !important;
+	background-image: url(https://gs.meridian-mkt.cn/002/images/slider_next.png);
+	background-repeat: no-repeat;
+	cursor: pointer;
+}
+
+#prev:hover {
+	background-image: url(https://gs.meridian-mkt.cn/002/images/slider_prev_over.png);
+	background-repeat: no-repeat;
+}
+
+#next:hover {
+	background-image: url(https://gs.meridian-mkt.cn/002/images/slider_next_over.png);
+	background-repeat: no-repeat;
+}
+
+
+
+
+.holder {
+	margin: auto;
+    position: relative;
+    width: 950px;
+}
+
+/* ---------------------------- About ---------------------------- */
+
+#aboutWrapper, #admissionsWrapper, #schoolWrapper, #outsideWrapper, #academicWrapper {
+	width: 100%;
+	background: url(https://gs.meridian-mkt.cn/002/images/bgimages/about.jpg) no-repeat top center;
+	clear: both;
+	float: left;
+}
+	#aboutWrapper.latest-news {background: url(https://gs.meridian-mkt.cn/002/images/bgimages/latest_news_banner.jpg) no-repeat top center !important;		}
+	#aboutWrapper.cal {background: url(https://gs.meridian-mkt.cn/002/images/bgimages/school_calendar_banner.jpg) no-repeat top center !important;		}
+	#aboutWrapper.contact {background: url(https://gs.meridian-mkt.cn/002/images/bgimages/contact_banner.jpg) no-repeat top center !important;		}
+	#admissionsWrapper.prospectus {background: url(https://gs.meridian-mkt.cn/002/images/bgimages/prospectus_banner.jpg) no-repeat top center !important;}
+	#schoolWrapper.photo {background: url(https://gs.meridian-mkt.cn/002/images/bgimages/21.jpg) no-repeat top center !important;}
+	#schoolWrapper.video {background: url(https://gs.meridian-mkt.cn/002/images/bgimages/video_gallery_banner.jpg) no-repeat top center !important;}
+	#schoolWrapper.map-bg {background: url(https://gs.meridian-mkt.cn/002/images/bgimages/38.jpg) no-repeat top center !important;}
+	#schoolWrapper.strathallian-pg {background: url(https://gs.meridian-mkt.cn/002/images/bgimages/strathallian_photo_gallery.jpg) no-repeat top center !important;}
+  	#schoolWrapper.strathallian-wo {background: url(https://gs.meridian-mkt.cn/002/images/bgimages/strathallian_whats_on_banner.jpg) no-repeat top center !important;}
+	#schoolWrapper.strathallian-an {background: url(https://gs.meridian-mkt.cn/002/images/bgimages/announcements_banner.jpg) no-repeat top center !important;}
+	#aboutWrapper.directory {background: url(https://gs.meridian-mkt.cn/002/images/bgimages/strathallian_banner_random_02.jpg) no-repeat top center !important;}
+	#admissionsWrapper.registration {background: url(https://gs.meridian-mkt.cn/002/images/bgimages/registration_banner.jpg) no-repeat top center !important;}
+	
+
+#leftCol {
+	width: 250px;
+	float: left;
+	border-bottom: 1px solid #b79753;
+	background: #000 url(https://gs.meridian-mkt.cn/002/images/leftCol_bg.png) repeat-y;
+	margin-top: 270px;
+	box-shadow:inset 0 0 20px #1d1d1d;
+	margin-bottom: 20px;
+}
+
+#leftCol ul li {
+	list-style-image: none;
+}
+
+#leftCol ul {
+	box-shadow:inset 0 0 20px #171717;
+}
+
+#leftCol li a {
+	position: relative;
+	display: block;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-right: 45px;
+	border-bottom: 1px solid #171717;
+	color: #FFF;
+	padding-left: 30px;
+	/*background: url(https://gs.meridian-mkt.cn/002/images/icons/arrow_gold_large.png) no-repeat 209px 50%;*/
+}
+
+#leftCol li:hover, #leftCol li.active {
+	background: #a48d51; /* Old browsers */
+	background: -moz-linear-gradient(top,  #a48d51 0%, #ac9455 30%, #8c7844 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#a48d51), color-stop(30%,#ac9455), color-stop(100%,#8c7844)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #a48d51 0%,#ac9455 30%,#8c7844 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #a48d51 0%,#ac9455 30%,#8c7844 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #a48d51 0%,#ac9455 30%,#8c7844 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #a48d51 0%,#ac9455 30%,#8c7844 100%); /* W3C */
+}
+	#leftCol li:hover a, #leftCol li.active a {
+		/*background: url(https://gs.meridian-mkt.cn/002/images/icons/arrow_grey_large.png) no-repeat 209px 50%;*/
+		font-weight: bold;
+	}
+	
+#rightCol {
+	width: 670px;
+	float: right;
+	margin-top: 270px;
+	color: #CCC;
+}
+
+#rightCol .standardContent, #rightCol .standardContentBottom  {
+	width: 610px;
+	background: #333333;
+	padding: 30px;
+	padding-top: 20px;
+	padding-bottom: 25px;
+	border-bottom: 1px solid #b79753;
+	box-shadow:inset 0 0 60px #090909;
+	margin-bottom: 30px;
+	float: left;
+}
+
+#rightCol .standardContent ul{
+	margin-top: -5px;
+	margin-bottom: 25px;
+	list-style-type: none;
+	padding-left: 0px;
+	
+}
+
+#rightCol .standardContent ul li {
+	padding-top: 2px;
+	padding-bottom: 2px;
+	margin: 0px;
+	background: url(https://gs.meridian-mkt.cn/002/images/icons/bullet_icon.png) no-repeat 0px 9px;
+	padding-left: 12px;
+	margin-left: 15px;
+}
+
+.location_map {
+	float: right;
+	margin-left: 10px;
+	margin-bottom: 5px;
+}
+
+
+#rightCol .standardContentBottom {
+	border-bottom: 0px;
+}
+
+#rightCol .standardContent h2, #contactContent h2, .standardContent h1 {
+	font-family: 'CantarellRegular', Arial, Helvetica, sans-serif;
+	font-size: 1.923em;
+	margin-bottom: 17px;
+	text-transform: uppercase;
+	padding-bottom: 10px;
+}
+
+#rightCol .standardContent h3.detail, #rightCol .standardContentBottom h3.detail {
+	margin-top: 5px;
+	float: left;
+	
+}
+
+#rightCol .standardContent h4, #rightCol .standardContentBottom h4 {
+	font-family: 'CantarellRegular', Arial, Helvetica, sans-serif;
+	font-size: 1.538em;
+	margin-bottom: 15px;
+}
+
+#rightCol .standardContent .boldItalic, #rightCol .standardContentBottom .boldItalic {
+	font-weight: bold;
+	font-style:italic;
+	margin-bottom: 35px;
+}
+
+#rightCol .standardContent .quote, #rightCol .standardContentBottom .quote {
+	border-left: 1px solid #b79753;
+	padding-left: 20px;
+	font-size: 1.538em;
+	color: #FFF;
+	font-family: 'CantarellRegular', Arial, Helvetica, sans-serif;
+	text-shadow: 0px 0px 10px #1c1c1c;
+	line-height: 1.2;
+}
+	 
+
+#rightCol .standardContent p, #rightCol .standardContentBottom p, #contactContent p {
+	margin-bottom: 20px;
+}
+
+.standardContent .imagegroup {
+	margin-bottom: 20px;
+	margin-top: 0px;
+	float: left;
+}
+
+
+
+
+
+
+
+
+
+
+/* ----------------------- School Calendar ----------------------- */
+
+#calendarWrapper {
+	display: block;
+	float: left;
+	width: 100%;	
+}
+	#calendarWrapper .month {
+		display: block;
+		float: left;
+		width: 100%;
+		margin-bottom: 20px;
+	}
+	#calendarWrapper .item {
+		position: relative;
+		display: block;
+		float: left;
+		width: 570px;
+		background: #0a2766 url(https://gs.meridian-mkt.cn/002/images/calendar/calendar-item_bg.png) repeat-x 0 bottom;
+		padding: 20px;
+	}
+	#calendarWrapper .item.alt, #calendarWrapper .item.darkbg {
+		background: #001031 url(https://gs.meridian-mkt.cn/002/images/calendar/calendar-item_bg-alt.png) repeat-x 0 bottom;		
+	}
+	#calendarWrapper .item h4 {
+		font-size: 16px;
+		line-height: 1.2;
+		color: #FFF;
+		margin-bottom: 0px;
+	}
+	#calendarWrapper .item h4 span.date {
+	    color: #B19857;
+	    font-family: Arial,Helvetica,sans-serif;
+	    font-size: 1em;
+	    font-weight: bold;
+	}
+	#calendarWrapper .item .content {
+		display: block;
+		float: left;
+		width: 100%;
+		display: none;
+	}
+	#calendarWrapper .item .controls {
+		display: block;
+		position: absolute;
+		right: 20px;
+		top: 20px;
+	}
+	#calendarWrapper .item .controls a {
+		padding-right: 15px;
+		color: #FFF;
+		font-size: 1em;	
+		cursor: pointer;	
+	}
+	#calendarWrapper .item .controls a:hover {
+		color: #B19857;
+	}
+		#calendarWrapper .item .controls a.open {
+			background: url(https://gs.meridian-mkt.cn/002/images/calendar/add-filter.png) no-repeat right center !important;		
+		}
+		#calendarWrapper .item .controls a.close {
+			background: url(https://gs.meridian-mkt.cn/002/images/calendar/remove-filter.png) no-repeat right center !important;
+			display: none;
+		}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ------------------------ News & Events ------------------------- */
+
+
+
+#newsWrapper {
+	width: 100%;
+	background-image: url(https://gs.meridian-mkt.cn/002/images/newspage_bg.jpg);
+	background-repeat: no-repeat;
+	background-position: top center;
+	clear: both;
+	float: left;
+}
+
+#newsFilter {
+	width: 610px;
+	float: left;
+	margin-bottom: 15px;
+	margin-top: 10px;
+}
+
+#newsFilter .filter a {
+	float: left;
+	color: #FFF;
+	margin-top: 6px;
+	margin-left: 10px;
+}
+
+#newsFilter .filter a:hover {
+	color: #b19857;
+}
+
+#newsFilter .filter a img {
+	position: relative;
+	float: right;
+	margin-left: 10px;
+	top: 3px;
+}
+
+	
+.newsItemWrapper {
+}
+
+.newsItemBlock {
+	width: 93%;
+	float: left;
+	background: #001031  url(https://gs.meridian-mkt.cn/002/images/calendar/calendar-item_bg-alt.png) repeat-x 0 bottom !important;
+	padding: 20px 3.5%;
+}
+	.newsItemBlock.alt {
+		background: #0A2766 url(https://gs.meridian-mkt.cn/002/images/calendar/calendar-item_bg.png) repeat-x 0 bottom !important;
+	}
+
+.newsImage {
+	height: 90px;
+	width: 140px;
+	float: left;
+	margin-right: 15px;
+	border: 1px solid #B79753;
+	margin-bottom: 0px;
+}
+
+.newsItemBlock .date {
+	color: #b19857;
+	font-size: 1em;
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: bold;
+}
+
+.newsItemBlock h3 {
+	margin-bottom: 10px;
+	margin-top: 3px;
+	font-size: 16px;
+}
+	.newsItemBlock h3 a {
+		color: #FFF;
+	}
+
+.newsItemBlock .newsDesc {
+	margin: 0px;
+	padding: 0px;
+}
+
+.newsItemSmallAlt, .newsItemSmall {
+	width: 93%;
+	text-align: left;
+	float: left;
+	padding: 20px 3.5% 18px;
+	
+}
+
+.newsItemSmall {
+	background: #001031  url(https://gs.meridian-mkt.cn/002/images/calendar/calendar-item_bg-alt.png) repeat-x 0 bottom !important;	
+	margin-top: 20px;
+}
+	.newsItemSmallAlt {	
+		background: #0A2766 url(https://gs.meridian-mkt.cn/002/images/calendar/calendar-item_bg.png) repeat-x 0 bottom !important;
+		margin-bottom: -20px;
+	}
+
+.newsItemSmall .date, .newsItemSmallAlt .date {
+	color: #b19857;
+	font-size: 1em;
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: bold;
+}
+
+.newsItemSmall h3, .newsItemSmallAlt h3 {
+	color: #FFF;
+	font-size: 16px;
+	margin-bottom: 0;
+}
+
+	.newsItemSmall h3 a, .newsItemSmallAlt h3 a {
+		color: #FFF;		
+	}
+
+#controlsWrapper {
+	width: 610px;
+	float: left;
+	text-align: center;
+	padding-top: 30px;
+	padding-bottom: 30px;
+}
+
+#controlsWrapper a {
+	color: #FFF;
+	font-weight: bold;
+}
+	#controlsWrapper a:hover {
+		color: #B19857;
+	}
+
+#controlsWrapper .results {
+	color: #b19857;
+	padding-left: 30px;
+	padding-right: 30px;
+	font-weight: bold;
+}
+
+#controlsWrapper .controlsImage {
+	position: relative; 
+	top: 2px;
+	margin-left: 5px;
+	margin-right: 5px;
+}
+
+
+
+
+
+
+/* ----------------------- History ------------------------ */
+
+ul#downloads {
+	width: 100%;
+	border-bottom: 1px solid #171717;
+	margin-bottom: 20px;
+	padding-left: 0px !important;
+	margin-top: 0px !important;
+}
+
+ul#downloads li, ul#downloads li.itemDark  {
+	display: block;
+	float: left;
+	width: 520px !important;
+	padding: 15px 20px 15px 70px !important;
+	background: url(https://gs.meridian-mkt.cn/002/images/icons/pdf.png)no-repeat 20px 10px !important;
+	font-weight: bold;
+	border-top: 1px solid #171717;
+}
+
+ul#downloads li.itemDark  {
+	background: #292929 url(https://gs.meridian-mkt.cn/002/images/icons/pdf.png)no-repeat 20px 10px !important;
+}
+
+ul#downloads li .right {
+	float: right;
+	color: #FFF;
+}
+
+ul.pdfList {
+    display: block;
+	float: left;
+    width: 100%;
+	margin-bottom: 20px;
+	padding-left: 0px !important;
+	margin-top: 0px !important;
+}
+
+ul.pdfList li, ul.pdfList li.itemDark {
+    display: block;
+	float: left;
+	width: 96%;
+	margin: 0 !important;
+    background: #001031 url(https://gs.meridian-mkt.cn/002/images/calendar/calendar-item_bg-alt.png) repeat-x 0 bottom !important;
+    border: 0 !important;
+    padding: 0 2% !important;
+    font-size: 16px;
+    font-family: 'CantarellRegular', Arial, Helvetica, sans-serif;
+}
+
+	ul.pdfList li a {
+		display: block;
+		float: left;
+		width: 89%;
+		padding: 15px 10px 15px 60px !important;
+		background: url(https://gs.meridian-mkt.cn/002/images/icons/pdf.png) no-repeat left center;
+		color: #FFF;
+	}
+	ul.pdfList li a:hover {
+		color: #B79753;
+	}
+
+ul.pdfList li.itemDark {
+	background: #0A2766 url(https://gs.meridian-mkt.cn/002/images/calendar/calendar-item_bg.png) repeat-x 0 bottom !important;
+}
+
+ul.pdfList li span.right {
+	display: block;
+    float: right;
+	color: #B79753;
+	font-size: 11px;
+	margin-top: 3px;
+}
+
+
+
+
+/* ----------------------- Interactive Map ------------------------ */
+
+#mapWrapper {
+	width: 100%;
+	background-image: url(https://gs.meridian-mkt.cn/002/images/mappage_bg.jpg);
+	background-repeat: no-repeat;
+	background-position: top center;
+	clear: both;
+	float: left;
+}
+
+
+#leftCol li.sub {
+	background: #685C3B;
+}
+#leftCol li.sub a {
+	display: block;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	border-bottom: 1px solid #85754a;
+	color: #FFF;
+	padding-left: 45px;
+	background: #685C3B url(https://gs.meridian-mkt.cn/002/images/liSub_bg.png) no-repeat 0px center;
+}
+#leftCol li.sub:hover a {
+	background: url(https://gs.meridian-mkt.cn/002/images/liSub_bg.png) no-repeat 0px center !important;	
+	font-weight: normal;
+}
+#leftCol li.sub.active, #leftCol li.sub.active:hover {
+	background: #64593D; /* Old browsers */
+	background: -moz-linear-gradient(top,  #64593D 0%, #6B5D40 30%, #463E29 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#64593D), color-stop(30%,#6B5D40), color-stop(100%,#463E29)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #64593D 0%,#6B5D40 30%,#463E29 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #64593D 0%,#6B5D40 30%,#463E29 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #64593D 0%,#6B5D40 30%,#463E29 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #64593D 0%,#6B5D40 30%,#463E29 100%); /* W3C */
+	box-shadow: inset 0 0 7px rgba(0,0,0,0.2);
+}
+	#leftCol li.sub.active a, #leftCol li.sub.active:hover a {
+		background: url(https://gs.meridian-mkt.cn/002/images/icons/arrow_gold_large.png) no-repeat 219px 50% !important;
+	}
+	#leftCol li.sub.active:hover a {
+		font-weight: bold;
+	}
+
+
+			
+
+#leftCol li.subActive a {
+	display: block;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	border-bottom: 1px solid #85754a;
+	color: #FFF;
+	padding-left: 30px;
+	font-weight: bold;
+	background: url(https://gs.meridian-mkt.cn/002/images/liSub_bg_active.png) no-repeat 0px 0px;
+}
+
+
+#leftCol li.sub a:hover {
+	background: url(https://gs.meridian-mkt.cn/002/images/icons/arrow_trans.png) no-repeat 219px 13px;
+}
+
+#leftCol li.sub a.active {
+	background: url(https://gs.meridian-mkt.cn/002/images/leftCol_LinkOver_bg.png) no-repeat 0px 0px;
+}
+
+
+#mapContent {
+	position: relative;
+	width: 670px;
+	height: 650px;
+	float: left;
+	background: url(https://gs.meridian-mkt.cn/002/images/map/map_bg.jpg) no-repeat;
+	margin-bottom: 20px;
+	margin-top: -30px;
+}
+
+.immarker  {
+	position: absolute;
+	display: block;
+	width: 45px;
+	height: 51px;
+}
+	#mapContent .immarker .pointer {
+		display: block;
+		position: relative;
+		float: left;
+		width: 45px;
+		height: 51px;
+		background: url(https://gs.meridian-mkt.cn/002/images/icons/map_marker.png) no-repeat;
+		cursor: pointer;
+	}
+/*	#mapContent .immarker.active .pointer {
+		display: none;
+	}*/
+
+.markerFreelandHouse {
+	top: 177px;
+	right: 17px;
+}
+.markerGlenbraeHouse {
+	top: 324px;
+	right: 77px;
+}
+.markerNicolHouse {
+	top: 90px;
+	right: 84px;
+}
+.markerRileyJuniorHouse {
+	top: 459px;
+	right: 307px;
+}
+.markerRuthevnHouse {
+	top: 106px;
+	right: 128px;
+}
+.markerSimpsonHouse {
+	top: 157px;
+	right: 48px;
+}
+.markerThronbankHouse {
+	top: 179px;
+	right: 365px;
+}
+.markerWoodlandsHouse {
+	top: 157px;
+	right: 305px;
+}
+.markerMainBuilding {
+	top: 158px;
+	right: 133px;
+}
+.markerICTBuilding {
+	top: 382px;
+	right: 438px;
+}
+.markerSportsHallAndGym {
+	top: 300px;
+	right: 474px;
+}
+.markerDesignAndTechnology {
+	top: 263px;
+	right: 453px;
+}
+.markerChapel {
+	top: 210px;
+	right: 284px;
+}
+.markerMedicalCentre {
+	top: 149px;
+	right: 392px;
+}
+.markerCanoeingAndFishingLake {
+	top: 30px;
+	right: 264px;
+}
+.markerArtSchool {
+	top: 143px;
+	right: 187px;
+}
+.markerClayPigeonRange {
+	top: 1px;
+	right: -3px;
+}
+.markerAllWeatherPitches {
+	top: 69px;
+	right: 527px;
+}
+.markerDiningHall {
+	top: 120px;
+	right: 24px;
+}
+
+
+.imoverlay {
+	z-index: 1000;
+	position: absolute;
+	display: none;
+	width: 385px;
+	/*background: url(https://gs.meridian-mkt.cn/002/images/map/map_overlay_bg.png) no-repeat;*/
+	padding: 20px;
+	top: -218px;
+	right: 7px;
+	background: #0a2666; /* Old browsers */
+	background: -moz-linear-gradient(top,  #0a2666 0%, #05143b 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#0a2666), color-stop(100%,#05143b)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #0a2666 0%,#05143b 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #0a2666 0%,#05143b 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #0a2666 0%,#05143b 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #0a2666 0%,#05143b 100%); /* W3C */
+	box-shadow: inset 0 0 60px rgba(0,0,0,0.6);
+}
+	.immarker.active .imoverlay {
+		display: block;
+	}
+	.imoverlay:before {
+		content: url('/images/map/map-arrow.png');
+		position: absolute;
+		right: 15px;
+		top: 100%;
+		width: 30px;
+		height: 57px;
+	}
+
+.imoverlay .content {
+	position: relative;
+	width: 100%;
+	margin: 0px;
+	padding: 0px;
+}
+
+.imoverlay .close {
+	position: absolute;
+	top: 5px;
+	right: 0px;
+	width: 12px;
+	height: 13px;
+	background: url(https://gs.meridian-mkt.cn/002/images/icons/close.png) no-repeat;
+	cursor: pointer;
+}
+	
+
+.imoverlay h2 {
+	font-family: 'CantarellRegular', Arial, Helvetica, sans-serif;
+	font-size: 1.538em;
+	margin-bottom: 10px;
+	text-transform: uppercase;
+}
+
+.imoverlay p {
+	margin-bottom: 13px;
+}
+
+.imoverlay img {
+	float: right;
+	margin-left: 10px;
+}
+
+
+
+
+/* -------------------------- Map Detail -------------------------- */
+#detailWrapper {
+	width: 100%;
+	background: url(https://gs.meridian-mkt.cn/002/images/detailpage_bg.jpg) no-repeat top center;
+	clear: both;
+	float: left;
+}
+
+.detailImage, .detailImage1 {
+	float: right;
+	margin-left: 10px;
+}
+
+.detailImage1 {
+	border: 1px solid #B79753;
+}
+
+.photoImage {
+	float: left;
+	margin-bottom: 25px;
+}
+
+.house-featured, .house-featured1 {
+	display: block;
+	float: left;
+	width: 290px;
+	height: 180px;
+	overflow: hidden;
+	margin-top: 20px;
+	background: #000;
+}
+
+.house-featured-long {
+	display: block;
+	float: left;
+	width: 610px;
+	height: 120px;
+	overflow: hidden;
+	margin-top: 20px;
+	background: #000;
+}
+
+.house-featured1 {
+	float: right;
+}
+
+.house-featured img, .house-featured1 img {
+	opacity: 1;
+	filter: alpha(opacity = 100);
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+	transition: all 0.2s linear;
+	-webkit-transition: all 0.2s linear;
+	-moz-transition: all 0.2s linear;
+	-o-transition: all 0.2s linear;
+}
+
+.house-featured:hover img, .house-featured1:hover img {
+	opacity: 0.8;
+	filter: alpha(opacity = 80);
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+}
+
+.videoImage {
+	float: right;
+	margin-bottom: 25px;
+	margin-top: 20px;
+}
+
+.detailContent {
+	width: 610px;
+	float: left;
+}
+
+.standardContent ul.detailNav {
+	display: block;
+	float: right; 
+	clear: none;
+}
+
+.standardContent .detailNav li {
+	display: block;
+	float: left;
+	background: none !important;
+	width: auto;
+}
+
+.detailNav a {
+	float: right;
+	color: #FFF;
+	background: url(https://gs.meridian-mkt.cn/002/images/icons/arrow_gold_large.png) no-repeat right;
+	padding-right: 15px !important;
+	margin-left: 10px;
+}
+
+.detailNav a:hover {
+	color: #b19857;
+}
+
+.detailNav a img {
+	position: relative;
+	float: right;
+	margin-left: 10px;
+	top: 3px;
+}
+
+
+
+
+
+/* ---------------------------- School Life ---------------------------- */
+
+p.houseDesc {
+	width: 378px;
+}
+
+.houseNewsItem {
+	width: 300px;
+	float: left;
+	border-bottom: 1px solid #171717;
+	padding-bottom: 20px;
+	margin-bottom: 20px;
+	padding-right: 5px;
+	line-height: 1.3;
+}
+
+.houseNewsItem .date {
+	font-weight: bold;
+	color: #b19857;
+}
+
+.houseNewsItem img.newsImage {
+	float: left;
+	margin-right: 10px;
+}
+
+.houseNewsItem a {
+	float: left;
+	margin-top: 8px;
+	padding: 0px;
+	color: #FFF;
+}
+
+.houseNewsItem a:hover {
+	color: #b19857;
+}
+
+.houseNewsItem a img {
+	position: relative;
+	top: 2px;
+	margin-left: 10px;
+}
+
+.houseContent {
+	display: block;
+	width: 100%;
+	border-bottom: 1px solid #171717;
+	float: left;
+	padding-bottom: 15px;
+	padding-top: 10px;
+	margin-bottom: 10px;
+}
+
+.houseContent a {
+	margin-right: 10px;
+}
+
+.houseContent .linkImg {
+	position: relative;
+	top: 2px;
+	margin-left: 10px;
+}
+
+.houseContent a.link {
+	color: #FFF;
+}
+
+.houseContent a.link:hover {
+	color: #b19857;
+}
+
+.houseContent .leftImage {
+	float: left;
+	margin-right: 20px;
+	border: 1px solid #B79753;
+}
+
+.houseContent .rightImage {
+	float: right;
+	margin-left: 20px;
+	border: 1px solid #B79753;
+	
+}
+
+h3.house  {
+	display: block;
+	float: left;
+	margin-top: 5px;
+	width: 100%;
+	border-top: 1px solid #171717;
+	padding-top: 20px;
+}
+	
+.nicolLogo {
+	position: absolute;
+	display: block;
+	width: 224px;
+	height: 281px;
+	top: 135px;
+	right: 21px;
+	z-index: 1000;
+	background: url(https://gs.meridian-mkt.cn/002/images/houses/nicol_logo.png) no-repeat;
+}
+
+.viewListings a {
+	float: right;
+	color: #FFF;
+	margin-top: 6px;
+}
+
+.viewListings a img {
+	position: relative;
+	float: right;
+	margin-left: 10px;
+	top: 3px;
+}
+
+
+
+
+
+
+
+/* ------------------- Video & Photo Gallery  -------------------- */
+
+#galleryWrapper {
+	width: 100%;
+	background: url(https://gs.meridian-mkt.cn/002/images/gallerypage_bg.jpg) no-repeat top center;
+	clear: both;
+	float: left;
+}
+
+#vidWrap {
+	float: left;
+	margin-bottom: 40px;
+}
+
+#vidWrap img {
+	-moz-box-shadow: 0 0 10px #232323;
+	-webkit-box-shadow: 0 0 10px #232323;
+	box-shadow: 0 0 10px #232323;
+}
+
+#photoWrap {
+	display: block;
+	position: relative;
+	float: left;
+	width: 100%;
+	overflow: hidden;
+}
+	#photoWrap a.controls {
+		display: block;
+		position: absolute;
+		top: 230px;
+		width: 30px;
+		height: 100px;
+		background: #000;
+		z-index: 9999;
+		cursor: pointer;
+		text-indent: -9999px;
+		opacity: 0.3;
+		filter: alpha(opacity = 30);
+		-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";
+		transition: all 0.3s;
+		-webkit-transition: all 0.3s;
+		-moz-transition: all 0.3s;
+		-o-transition: all 0.3s;
+	}
+	#photoWrap:hover a.controls {
+		opacity: 0.7;
+	}
+		#photoWrap a.controls.prev {
+			left: 2px;
+			background: url(https://gs.meridian-mkt.cn/002/images/controls.png) no-repeat 0 0;
+		}
+		#photoWrap a.controls.next {
+			right: 2px;
+			background: url(https://gs.meridian-mkt.cn/002/images/controls.png) no-repeat -30px 0;
+		}
+	#photoWrap a.controls:hover {
+		opacity: 1;
+	}
+
+h3.videoHeading  {
+	margin-top: 10px;
+}
+
+.videoItem {
+	display: block;
+	width: 192px;
+	float: left;
+	margin-top: 20px;
+	margin-right: 17px;
+}
+	.videoItem.active .vidSmall {
+		opacity: 0.5;
+	}
+	.videoItem h3 {
+		font-size: 16px;
+	}
+
+.videoItemRight {
+	display: block;
+	width: 192px;
+	float: right;
+	margin-top: 20px;
+}
+	.videoItemRight h3 {
+		font-size: 16px;
+	}
+	.videoItemRight.active .vidSmall {
+		opacity: 0.7;
+	}
+
+.vidLarge {
+	position: relative;
+	display: block;
+	width: 610px;
+	height: 355px;
+}
+
+.vidLarge a {
+	position: relative;
+	display: block;
+	width: 610px;
+	height: 355px;
+	overflow: hidden;
+}
+
+.vidLarge a .overlay {
+	position: absolute;
+	display: block;
+	width: 610px;
+	height: 355px;
+	top: 0px;
+	left: 0px;
+	background: url(../images/gallery/overlay_large.png) no-repeat;
+	z-index: 10000;
+}
+
+.vidLarge a:hover {
+	text-indent: 0px;
+}
+
+.vidLarge a:hover .overlay {
+	display: none;
+}
+
+.vidLarge img {
+    width: 609px;
+    height: 355px;
+}
+
+.vidSmall a {
+	position: relative;
+	display: block;
+	width: 190px;
+	height: 120px;
+	overflow: hidden;
+	border: 1px solid #b19857;
+	text-align: center;
+}
+
+.vidSmall a:hover {
+	text-indent: 0px;
+}
+
+.vidSmall a .overlay {
+	position: absolute;
+	display: block;
+	width: 190px;
+	height: 120px;
+	top: 0px;
+	left: 0px;
+	background: url(../images/gallery/overlay_small.png) no-repeat -1px -1px;
+	z-index: 10000;
+}
+
+.vidSmall a:hover .overlay {
+	display: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* ------------------------ Support ------------------------- */
+
+
+
+
+
+/* --------------------------- Contact --------------------------- */
+
+#contactWrapper {
+	width: 100%;
+	background-image: url(https://gs.meridian-mkt.cn/002/images/detailpage_bg.jpg) no-repeat top center;
+	clear: both;
+	float: left;
+}
+
+#contactContent, #contactContentBottom {
+	width: 890px;
+	background: rgba(10,10,10,0.85);
+	padding: 30px;
+	padding-top: 20px;
+	padding-bottom: 10px;
+	border-bottom: 1px solid #b79753;
+	/*box-shadow:inset 0 0 60px #090909;*/
+	margin-bottom: 30px;
+	float: left;
+	margin-top: 270px;
+}
+
+#contactContentBottom {
+	border-bottom: 0px;
+	margin-top: 0px;
+	padding-bottom: 40px;
+}
+
+#contactContent .left, #contactContentBottom .left {
+	width: 480px;
+	float: left;
+}
+
+#contactContent .right, #contactContentBottom .right {
+	width: 380px;
+	float: right;
+}
+
+#contactContentBottom .left p, #contactContentBottom .right p {
+	margin-bottom: 20px;
+}
+
+#contactContentBottom h3 {
+	color: #FFF;
+	margin-top: 10px;
+}
+
+#contactForm {
+	width: 505px;
+	float: left;
+}
+
+#contactForm.request-prospectus {
+	width: 100%;
+}
+	#contactForm.request-prospectus .textFieldLong {
+		width: 91%;
+	}
+	#contactForm.request-prospectus .textField {
+		width: 43%;
+	}
+
+.textField {
+	display: block;
+	height: 28px;
+	width: 210px;
+	background: url(https://gs.meridian-mkt.cn/002/images/forms/textField_bg_28px.png);
+	border: 1px solid #171717;
+	color: #FFF;
+	padding-left: 10px;
+	padding-right: 10px;
+	float: left;
+	margin-right: 10px;
+	margin-bottom: 10px;
+} 
+
+.textFieldLong {
+	display: block;
+	height: 28px;
+	width: 452px;
+	background: url(https://gs.meridian-mkt.cn/002/images/forms/textField_bg_28px.png);
+	border: 1px solid #171717;
+	color: #FFF;
+	padding-left: 10px;
+	padding-right: 10px;
+	float: left;
+	margin-right: 10px;
+	margin-bottom: 10px;
+}
+
+.textArea {
+	display: block;
+	height: 110px;
+	width: 462px;
+	background: #333333 url(https://gs.meridian-mkt.cn/002/images/forms/textArea_bg.png) repeat-x bottom;
+	border: 1px solid #171717;
+	color: #FFF;
+	padding-left: 10px;
+	float: left;
+	margin-right: 10px;
+	margin-bottom: 10px;
+	padding-top: 10px;
+	overflow: auto;
+}
+
+.buttonContact {
+	display: block;
+	width: 180px;
+	height: 31px;
+	background: url(https://gs.meridian-mkt.cn/002/images/button_contact_bg.png) no-repeat;
+	color: #FFF;
+	margin-bottom: 10px;
+	padding-left: 10px;
+	float: left;
+	margin-top: 10px;
+	line-height: 31px;
+	border: 0;
+	text-align: left;
+}
+
+.buttonContact:hover {
+	background: url(https://gs.meridian-mkt.cn/002/images/button_contact_bg_over.png) no-repeat;
+}
+
+#contactForm .required {
+	float: left;
+	margin-left: 15px;
+	font-style: italic;
+	margin-top: 17px;
+	font-size: 0.923em;
+}
+
+span.required {
+	color: #A48D51;
+}
+
+#contactContent .right .prospectusImage {
+	position: absolute;
+	background: url(https://gs.meridian-mkt.cn/002/images/home_prospectus.png) no-repeat;
+	width: 224px;
+	height: 284px;
+	top: 220px;
+	right: -50px;
+	z-index: 2000;
+}
+
+.submit {
+	display: block;
+	width: 190px;
+	height: 31px;
+	background: url(https://gs.meridian-mkt.cn/002/images/button_contact_bg.png) no-repeat;
+	color: #FFF;
+	float: left;
+	border: 0px;
+	text-align: left;
+	padding-left: 5px;
+}
+
+.submit:hover {
+	background: url(https://gs.meridian-mkt.cn/002/images/button_contact_bg_over.png) no-repeat;
+}
+
+a.submit {
+	clear: both;
+	float: none;
+	line-height: 31px;
+	padding-left: 15px;
+}
+
+form#directory-search {
+	float: left;
+	clear: both;
+	margin-bottom: 20px;
+	border-bottom: 1px solid #171717;
+	border-top: 1px solid #171717;
+	padding: 20px 0 15px 0;
+}
+
+#directory-search input {
+	margin-top: 10px !important;
+}
+
+#directory-search .textField {
+	margin-right: 15px;
+}
+
+.contact-map {
+	border: 1px solid #B79753;
+	box-shadow: inset 0px 0px 10px #000;
+}
+
+
+hr {
+	width: 100%;
+	background: #171717;
+	height: 1px;
+	float: left;
+	clear: both;
+	margin-bottom: 17px;
+	border: 0px solid #171717;
+	color: #B79753;
+	margin-top: -5px;
+}
+
+
+
+
+.standardContent li {
+	width: 95%;
+	float: left;
+	background: url(https://gs.meridian-mkt.cn/002/images/icons/bullet_icon.png) no-repeat left 10px !important;
+}
+
+.standardContent ul {
+	display: block;
+	width: 100%;
+	float: left;
+	clear: both;
+}
+
+.staff li {
+	width: 95%;
+}
+
+.goldBottomBorder {
+    border-bottom: 1px solid #171717;
+    padding-bottom: 20px;
+}
+
+.blackBottomBorder {
+    border-bottom: 1px solid #171717;
+    padding-bottom: 20px;
+}
+	.blackTopBorder{
+	    border-top: 1px solid #171717;
+	    padding-top: 20px;
+   	}
+
+.news_subpage {
+	position: relative;
+	display: block;
+	float: left;
+	width: 100%; 
+	margin-bottom: 0px;
+	background: url(https://gs.meridian-mkt.cn/002/images/calendar/calendar-item_bg-alt.png) repeat-x 0 bottom #001031
+}
+	.news_subpage.alt {
+		background: url(https://gs.meridian-mkt.cn/002/images/calendar/calendar-item_bg.png) repeat-x 0 bottom #0A2766;
+	}
+	.news_subpage:last-child {
+		border-bottom: 0px;
+	}
+	.news_subpage h3 {
+		display: block;
+		float: left;
+		clear: both;
+		width: 96%;
+		padding: 15px 2%;
+		line-height: 1;
+		margin: 0;
+	}
+	
+	.news_subpage .controls {
+		display: block;
+		position: absolute;
+		right: 20px;
+		top: 16px;
+	}
+	.news_subpage .controls a {
+		padding-right: 15px;
+		color: #FFF;
+		font-size: 1em;	
+		cursor: pointer;
+		margin-left: 14px;	
+	}
+	.news_subpage .controls a:hover {
+		color: #B19857;
+	}
+		.news_subpage .controls a.open {
+			background: url(https://gs.meridian-mkt.cn/002/images/calendar/add-filter.png) no-repeat right center !important;		
+		}
+		.news_subpage .controls a.close {
+			background: url(https://gs.meridian-mkt.cn/002/images/calendar/remove-filter.png) no-repeat right center !important;
+			display: none;
+		}
+	.news_subpage .news_sub_content {
+		display: none;
+		float: left;
+		width: 96%;
+		padding: 5px 2% 0 2%;
+	}
+	.news_subpage li {
+		width: 100% !important;
+	}
+h3.documents {
+	display: block;
+	float: left;
+	width: 100%;
+	margin-top:15px;
+	border-top: 1px solid #171717;
+	padding-top: 20px;
+}
+.house_document {
+	display: block;
+	float: left;
+	width: 100%;
+	padding: 13px 0;
+	background: url(https://gs.meridian-mkt.cn/002/images/calendar/calendar-item_bg.png) repeat-x 0 bottom #0A2766;
+}
+	.house_document.alt_doc {	
+		background: url(https://gs.meridian-mkt.cn/002/images/calendar/calendar-item_bg-alt.png) repeat-x 0 bottom #001031	
+	}
+	.house_document .title {
+		display: block;
+		float: left;
+		width: 75%;
+		margin-left: 15px;
+	}
+	.house_document h4 {
+		display: block;
+		float: left;
+		width: 100%;
+		margin-bottom: 5px !important; 
+		font-size: 13px !important;
+		font-family: 'CantarellBold' !important;
+	}	
+	.house_document .doc_date {
+		display: block;
+		float: left;
+		width: 100%;
+		font-size: 11px;
+		margin-bottom: 0px;
+		
+	}
+	.house_document a {
+	    color: #FFFFFF;
+	    display: block;
+	    float: right;
+	    margin-top: 10px;
+		margin-right: 15px;
+		background: url(https://gs.meridian-mkt.cn/002/images/icons/arrow_gold_large.png) no-repeat right 3px;
+		padding-right: 16px;
+	}
+	.house_document a:hover {
+		color: #B79753;
+	}
+
+
+
+
+
+/* ---------------------------- Footer ---------------------------- */
+
+#footerUpper.home {
+	display: none;
+	width: 100%;
+	height: 140px;
+	clear: both;
+	font-size: 11px;
+	background-image: url(https://gs.meridian-mkt.cn/002/images/content_bg.png) repeat-y center;
+}
+#footerUpper {
+	width: 100%;
+	height: 140px;
+	clear: both;
+	font-size: 11px;
+	background-image: url(https://gs.meridian-mkt.cn/002/images/subpage_content_bg.png) repeat-y center;
+}
+
+
+#footerLower .content .bgArrow {
+	width: 100%;
+	display: block;
+	position: absolute;
+	background: url(https://gs.meridian-mkt.cn/002/images/footerUpper_bg_arrow.png) no-repeat center bottom;
+	height: 10px;
+	z-index: 9997;
+	top: -21px;
+}
+	
+
+#footerUpper .gold {
+	color: #b19857;
+	font-weight: bold;
+}
+	
+
+#footerUpper .opportunities {
+	position: relative;
+	display: block;
+	float: right;
+	width: 260px;
+	background: url(https://gs.meridian-mkt.cn/002/images/opportunities.png) no-repeat;
+	top: -35px;
+	text-indent: -5000px;
+}
+
+#footerUpper .opportunities a {
+	display: block;
+	margin-top: 20px;
+	text-indent: 0px;
+	float: left;
+	margin-left: 5px;
+}
+
+#footerUpper .opportunities a.facebook {
+	margin-left: 190px;
+}
+
+#footerUpper .content {
+	position: relative;
+	width: 910px;
+	margin: auto;
+	padding-left: 20px;
+	padding-right: 20px;
+	color: #eaeaea;
+}
+
+#footerUpper .content .links {
+	float: left;
+	margin-top: 15px;
+}
+
+#footerUpper .content .links a{
+	font-weight: normal;	
+}
+
+
+#footerUpper .content .links a:hover {
+	color: inherit;
+}
+
+#footerUpper .content .links a b:hover {
+	color: #0F55C4;
+}
+
+	
+
+#footerUpper .content a {
+	color: #eaeaea;
+	font-weight: bold;
+}
+
+#footerUpper .content a:hover {
+	color: #b79753;
+}
+
+#footerLower {
+	position: fixed;
+	z-index: 11000;
+	width: 100%;
+	height: 38px;
+	background: #09245F url(https://gs.meridian-mkt.cn/002/images/footer_bg.png) repeat-x top;	
+	clear: both;
+	padding-top: 12px;
+	bottom: 0px;
+	left: 0px;
+}
+
+
+#footerLower .content {
+	position: relative;
+	width: 910px;
+	margin: auto;
+	padding-left: 20px;
+	padding-right: 20px;
+	z-index: 10000;
+	cursor: pointer;
+}
+
+#footerLower .quickLink {
+	display: block;
+	float: left;
+	font-size: 18px;
+	text-transform: uppercase;
+	font-family: 'CantarellRegular', Arial, Helvetica, sans-serif;
+	color: #FFF;
+	cursor: pointer;
+	width: 140px;
+}
+
+#footerLower .quickLinkOpen, #footerLower .quickLinkClose {
+	position: relative;
+	width: 720px;
+	font-size: 16px;
+	text-transform: uppercase;
+	font-family: 'CantarellRegular', Arial, Helvetica, sans-serif;
+	color: #FFF;
+	cursor: pointer;
+	text-align: right;
+	color: #b19857;
+	z-index: 20000;
+	float: right;
+	top: 2px;
+	padding-right: 30px;
+}
+
+#footerLower .quickLinkOpen {
+	background: url(https://gs.meridian-mkt.cn/002/images/icons/arrow_gold_up.png) no-repeat 730px 9px;
+}
+
+#footerLower .quickLinkClose {
+	background: url(https://gs.meridian-mkt.cn/002/images/icons/close.png) no-repeat 730px 6px;
+	display: none;
+}
+
+#footerLower .quickLinkOpen:hover {
+	background: url(https://gs.meridian-mkt.cn/002/images/icons/arrow_gold_up_hover.png) no-repeat 730px 9px;
+}
+
+#footerLower .quickLinkClose:hover {
+	background: url(https://gs.meridian-mkt.cn/002/images/icons/close_hover.png) no-repeat 730px 6px;
+}
+
+#footerLower .quickLinkOpen:hover, #footerLower .quickLinkClose:hover {
+	color: #FFF;
+}
+
+#footerLower .quickLinkOpen img, #footerLower .quickLinkClose img {
+	position: relative;
+	margin-left: 10px;
+	top: 1px;
+}
+
+#footerLower .quickLinkOpen img {
+	top: -1px;
+}
+
+#overlayWrapper {
+	position: relative;
+	width: 1250px;
+	margin: 0 auto;
+	z-index: 10000;
+}
+
+#overlay {
+	position: fixed;
+	width: 1250px;
+	height: 360px;
+	background: #030C1F url(https://gs.meridian-mkt.cn/002/images/footerOverlay_bg.png) repeat-x 0 0;
+	bottom:0;
+	display: none;
+	margin-bottom: 50px;
+	z-index: 10001;
+	-moz-box-shadow: 0 0 25px #030d25;
+	-webkit-box-shadow: 0 0 25px #030d25;
+	box-shadow: 0 0 25px #030d25;	
+}
+
+/* iPad specific style for overlay */
+@media only screen and (max-device-width: 1024px) {
+	#overlay {
+		width: 100%;
+	}
+}
+
+#overlay h2 {
+	font-size: 1.154em;
+	text-transform: uppercase;
+	font-family: 'CantarellRegular', Arial, Helvetica, sans-serif;
+	color: #FFF;
+	margin-bottom: 10px;
+	margin-top: 25px;
+	line-height: 1;
+}
+	
+
+#overlay .linkColWrappers {
+	width: 920px;
+	margin: auto;
+}
+
+.linkCol{
+	display: block;
+	width: 320px;
+	float: left;
+}
+
+.linkColMap{
+	display: block;
+	width: 270px;
+	float: right;
+}
+
+.linkCol ul li, .linkColMap ul li {
+	list-style-image: url(https://gs.meridian-mkt.cn/002/images/icons/arrow_gold.png);
+	list-style-position: inside;
+}
+
+.linkCol li, .linkColMap li {
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+
+.linkCol li a, .linkColMap li a {
+	color: #FFF;
+}
+
+.linkCol li a:hover, .linkColMap li a:hover {
+	color: #b79753;
+}
+
+.map {
+	display: block;
+	width: 260px;
+	height: 130px;
+	border: 1px solid #b79753;
+	-moz-box-shadow: 0 0 15px #030d25;
+	-webkit-box-shadow: 0 0 15px #030d25;
+	box-shadow: 0 0 15px #030d25;
+}
+
+.page-image-left {
+	float: left;
+	margin-right: 30px;
+	border: 1px solid #B79753;
+	margin-bottom: 10px;
+}
+
+.page-image-right {
+	float: right;
+	margin-left: 30px;
+	border: 1px solid #B79753;
+	margin-bottom: 10px;
+}
+
+
+.council-member {
+	display: block;
+	float: left;
+	width: 300px;
+	margin-right: 5px;
+	margin-bottom: 20px;
+}
+
+.council-member .content {
+	display: block;
+	float: left;
+	width: 185px;
+}
+
+.council-member img {
+	float: left;
+	margin-right: 15px;
+}
+
+.council-member .name, .council-member .phone, .council-member .email, .council-member .role {
+	font-weight: bold;
+	float: left;
+	width: 100%;
+}
+
+.council-member .phone, .council-member .email, .council-member .role {
+	font-weight: normal;
+}
+
+.council-member .email {
+	margin-top: 6px;
+}
+
+
+
+/* ---------------------------- form styles ---------------------------- */
+
+form .row {
+   display: inline;	
+	float: left; 
+}
+
+form .row label {
+	display: inline;	
+	float: left;
+}
+
+form .row input, form .row textarea, form .row select {
+	float: left;
+	display: inline;
+}
+
+/* Tinymce hacks */
+.pImageClear {
+   clear: both; 
+}
+
+.clear {
+    clear: both;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*-------------------- Registration Form Specific Styles --------------------------*/
+
+.registration-form .row {
+	display: block;
+	float: left;
+	width: 100%;
+	margin-bottom: 15px !important;
+}
+
+.registration-form .row.border {
+	border-bottom: 1px dotted #666;
+	padding-bottom: 20px;
+}
+
+.registration-form .col {
+	display: block;
+	float: left;
+	width: 50%;
+}
+
+.registration-form .sbHolder {
+	width:273px !important;
+}
+
+.registration-form .option {
+	display: block;
+	float: left;
+	width: 100%;
+	clear: both;
+}
+
+.registration-form .option label {
+	width: 90%;
+	margin-left: 1%;
+	cursor: pointer;
+}
+
+.registration-form fieldset {
+	display: block;
+	float: left;
+	margin-bottom: 15px;
+	padding-bottom: 0px;
+	width: 103%;
+}
+
+.registration-form.login {
+	display: block;
+	float: left;
+	width: 100%;
+	border-bottom: 1px solid #171717;
+	padding-bottom: 20px;
+}
+
+.registration-form fieldset h3 {
+	margin-bottom: 10px;
+}
+
+#terms-conditions {
+	display: block;
+	float: left;
+	padding:10px; 
+	width: 580px; 
+	height: 180px; 
+	overflow-y: scroll; 
+	border: 1px solid #171717; 
+	margin: 0px 0 15px 0; 
+	background: #333333 url("https://gs.meridian-mkt.cn/002/images/forms/textArea_bg.png") repeat-x center bottom ;
+}
+
+#terms-conditions ul {
+	display: block;
+	width: 515px;
+}
+
+#terms-conditions li {
+	width:100%;
+}
+
+#terms-conditions li ul {
+	display: block;
+	float: left;
+	margin-top: 5px !important;
+}
+
+.sbOptions {
+	margin: 0 !important;
+	padding: 0 !important;
+}
+
+.sbOptions li:first-child {
+	display: none;
+}
+
+.sbOptions li {
+	display: block;
+	float: left;
+	padding: 0 7px !important;
+	background: none !important;
+	width: 94%;
+	margin: 0 !important;
+}
+
+.registration-form label {
+	display: block;
+	float: left;
+	margin-bottom: 3px;
+	margin-right: 19px;
+}
+
+.registration-form input[type="submit"], .registration-button {    
+	background: url("https://gs.meridian-mkt.cn/002/images/button_contact_bg.png");
+    color: #FFFFFF;
+    display: block;
+    float: left;
+    clear: both;
+    height: 31px;
+    width: 190px;
+    border: 0px; outline: 0;
+    text-align: left;
+    padding-left: 5px;
+    margin-top: 15px;
+}
+
+.registration-form input[type="submit"]:hover, .registration-button:hover { 
+	background: url("https://gs.meridian-mkt.cn/002/images/button_contact_bg_over.png");
+}
+
+.registration-form input[type="text"], .registration-form input[type="email"], .registration-form input[type="tel"], .registration-form input[type="password"]{
+	display: block;
+	width: 275px !important;    
+	height: 28px;
+	padding: 0 10px;
+	clear: both;
+	background: url(https://gs.meridian-mkt.cn/002/images/forms/textField_bg_28px.png) repeat-x;
+	color: #ccc;
+	border: 1px solid #171717;
+}
+
+.registration-form hr {
+	margin: 10px 0 25px 0;
+}
+
+.registration-form input:required, .registration-form textarea:required {
+	box-shadow: none;
+	-moz-box-shadow: none;
+	-webkit-box-shadow: none;
+	-o-box-shadow: none;
+}
+
+.registration-form input[type="radio"], .registration-form input[type="checkbox"]{
+	position: relative;
+	display: block;
+	float: left;
+	margin-right: 5px;
+	top: 2px;
+}
+
+.registration-form textarea {
+    background: #333333 url("https://gs.meridian-mkt.cn/002/images/forms/textArea_bg.png") repeat-x center bottom;
+    border: 1px solid #171717;
+    color: #CCC;
+    display: block;
+    float: left;
+    height: 90px;
+    overflow: auto;
+    padding: 10px;
+    width: 590px;
+}
+
+.registration-form .row p {
+	margin-bottom: 5px;
+}
+
+/* Image galleries */
+#selectedGallery {
+	display: block;
+	float: left;
+    width: 99.5% !important;
+    height: 400px;
+    overflow: hidden;
+    border: 2px solid #85754A;
+}
+	#selectedGallery img {
+		max-width: 100%;
+		opacity: 0;
+		top: 0 !important;
+	}
+
+#selectedGallery div {
+	display: block;
+	float: left;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+}
+
+/* Strathallian Result */
+#directory-search h3 {
+	margin-bottom: 20px;
+}
+
+#directory-search .strathallian-result {
+	display: block;
+	float: left;
+	width: 100%;
+	border-bottom: 1px dotted #666;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    font-size: 0.923em;
+}
+
+#directory-search .strathallian-result h4 {
+    margin: 0 0 8px 0 !important;
+    font-size: 1.077em;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+
+#directory-search .strathallian-result h4 span.prefer {
+	color: #B79753;
+	font-size: 1em;
+}
+
+#directory-search .strathallian-result p.label {
+	display: block;
+	float: left;
+	width: 25%;
+	margin: 0;
+	font-weight: bold;
+}
+
+#directory-search .strathallian-result p.desc {
+	display: block;
+	float: left;
+	width: 75%;
+	margin: 0;
+}
+
+ul.errorList {
+	display: block;
+	float: left;
+	width: 99.7%;
+	background: #5a2626;
+	border: 1px solid red;
+	padding: 10px 0;
+	margin-bottom: 10px;
+}
+
+ul.errorList li {
+	display: block;
+	float: left;
+	width: 98%;
+	background: url(https://gs.meridian-mkt.cn/002/images/icons/bullet_icon.png) no-repeat 0 9px;
+    margin: 0 0 0 15px;
+    padding-bottom: 2px;
+    padding-left: 2%;
+    padding-top: 2px;
+}
+
+.newsLine {
+	display: block;
+	float: left;
+	width: 100%;
+	margin-bottom: 30px;
+	border-top: 1px solid #171717;
+	border-bottom: 1px solid #171717;
+	padding: 8px 0;
+}
+	.newsLine a.back {
+		display: block;
+		float: left;
+		margin-top: 2px;
+		background: url(../images/icons/controls_prev.png) no-repeat left center;
+		padding-left: 20px;
+	}
+
+	.newsLine .fb-like {
+		display: block;
+		float: right;
+		margin-right: 3px;
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+form#school-calendar {
+	display: block;
+	float: left;
+	width: 100%;
+}
+
+#calendar-filter {
+	display: block;
+	float: left;
+	width: 610px;
+	border-top: 1px solid #171717;
+	border-bottom: 1px solid #171717;
+	padding-top: 20px;
+	padding-bottom: 5px;
+}
+	#calendar-filter .row {
+		display: block;
+		width: 100%;
+		margin-bottom: 15px;
+	}
+	#calendar-filter input[type="submit"] {
+		display: block;
+		float: left;
+		color: #FFF;
+		padding-left: 15px;
+		border: 0;
+		margin-top: 5px;
+		background: none transparent;
+	}
+	#calendar-filter .add-filter {background: transparent url(https://gs.meridian-mkt.cn/002/images/calendar/add-filter.png) no-repeat left center !important;}
+	#calendar-filter .remove-filter {background: transparent url(https://gs.meridian-mkt.cn/002/images/calendar/remove-filter.png) no-repeat left center !important;}
+	
+	#calendar-filter input[type="submit"]:hover {
+		color: #b19857;
+	}
+	#calendar-filter .sbHolder {
+		width: 150px !important;
+	}
+	#calendar-filter .sbOptions li {
+		width: 91% !important;
+	}
+	#calendar-filter .sbSelector:link, #calendar-filter .sbSelector:visited, #calendar-filter .sbSelector:hover {
+		color: #FFF;
+	}
+	#calendar-filter a.buttonContact {
+		margin: 0;
+		margin-right: 15px;
+	}
+	#calendar-filter p.info {
+		display: block;
+		float: left;
+		margin: 6px 0 0 0;		
+	}
+
+
+
+#calendar-results {
+	display: block;
+	float: left;
+	width: 100%;	
+}
+	#calendar-results h3 {   
+	    padding-bottom: 10px;	
+	}
+	#calendar-results .item {
+		position: relative;
+		display: block;
+		float: left;
+		width: 570px;
+		background: #0a2766 url(https://gs.meridian-mkt.cn/002/images/calendar/calendar-item_bg.png) repeat-x 0 bottom;
+		padding: 20px;
+	}
+	#calendar-results .item.alt {
+		background: #001031 url(https://gs.meridian-mkt.cn/002/images/calendar/calendar-item_bg-alt.png) repeat-x 0 bottom;		
+	}
+	#calendar-results .item h4 {
+		font-size: 16px;
+		line-height: 1.2;
+		color: #FFF;
+		margin-bottom: 0px;
+		max-width: 498px;
+	}
+	#calendar-results .item h4 span.date {
+	    color: #B19857;
+	    font-family: Arial,Helvetica,sans-serif;
+	    font-size: 1em;
+	    font-weight: bold;
+	}
+	#calendar-results .item .content {
+		display: block;
+		float: left;
+		width: 100%;
+		display: none;
+		margin-top: 10px;
+	}
+		#calendar-results .item .content p:last-child {
+			margin-bottom: 0px;
+		}
+	#calendar-results .item .controls {
+		display: block;
+		position: absolute;
+		right: 20px;
+		top: 20px;
+	}
+	#calendar-results .item .controls a {
+		padding-right: 15px;
+		color: #FFF;
+		font-size: 1em;	
+		cursor: pointer;	
+	}
+	#calendar-results .item .controls a:hover {
+		color: #B19857;
+	}
+		#calendar-results .item .controls a.open {
+			background: url(https://gs.meridian-mkt.cn/002/images/calendar/add-filter.png) no-repeat right center !important;		
+		}
+		#calendar-results .item .controls a.close {
+			background: url(https://gs.meridian-mkt.cn/002/images/calendar/remove-filter.png) no-repeat right center !important;
+			display: none;
+		}
+		
+		
+		
+		
+		
+		
+		
+form#school-calendar #calendar {
+	position: relative;
+	display: block;
+	float: left;
+	width: 100%;
+    margin-top: 5px;
+    margin-bottom: 30px;
+    background: url(https://gs.meridian-mkt.cn/002/images/calendar/bg.jpg) no-repeat center 116px;
+}	
+		
+#calendar h3 {
+	position: absolute;
+	width: 100%;
+	text-align: center;
+	margin: 0 auto;
+	top: 15px;
+}		
+
+#calendar .fc-event-inner {
+	display: block;
+	width: 30px;
+	height: 30px;
+	border-radius: 200px;
+	color: #FFF;
+	text-align: center;
+	background: #b09756 !important;
+	line-height: 30px;
+	font-size: 16px;
+	font-family: 'CantarellBold',Arial,Helvetica,sans-serif;
+	margin: 0 auto;
+	margin-top: -15px;
+	cursor: pointer;
+}
+
+#calendar .fc-widget-header {
+	padding: 0;
+	font-family: 'CantarellRegular',Arial,Helvetica,sans-serif;
+	color: #FFF;
+	text-transform: uppercase;
+	font-size: 17px;
+	background: url(https://gs.meridian-mkt.cn/002/images/calendar/cal-head_bg.png) repeat-x 0 0 !important;
+	height: 56px;
+	line-height: 56px;
+	font-weight: normal;
+}
+
+#calendar .fc-header {
+	height: 58px;
+}
+
+#calendar .fc-widget-content {
+	background: none transparent;
+}
+	#calendar .fc-today {
+		background: rgba(0,0,0,0.3) !important;
+	}
+
+#calendar .fc-widget-content div {
+	min-height: 28px !important;
+}
+
+#calendar .fc-grid .fc-day-number {
+	float: left;
+}
+
+#calendar .fc-other-month {
+	background: #333 !important;
+}
+
+#calendar .fc-widget-header, #calendar .fc-widget-content {
+	border-color: #1b1a1a;
+}
+
+#calendar .fc-event-skin {
+	background: none transparent;
+	border: 0;
+}
+
+#calendar .fc-button-next, #calendar .fc-button-prev {
+	position: absolute;
+	display: block;
+	float: right;
+	width: 23px;
+	height: 22px;
+	text-indent: -9999px;
+	background: url(https://gs.meridian-mkt.cn/002/images/calendar/next.png) no-repeat 0 0;
+	border: 0;
+	top: 14px;
+	z-index: 9;
+}
+#calendar .fc-button-next {
+	right: 175px;
+}
+#calendar .fc-button-prev {
+	left: 175px;
+	background: url(https://gs.meridian-mkt.cn/002/images/calendar/prev.png) no-repeat 0 0;
+}
+
+#calendar .fc-button-inner {
+	border: 0;
+}
+
+
+#calendar .fc-button-content {
+	display: none;
+}
+
+
+
+
+
+
+
+
+
+#mainNav .dropdown {
+	position: absolute;
+	display: none;
+	left: 0;
+	top: 100%;
+	z-index: 9999;
+	width: 250px;
+	background: #071F54 url(https://gs.meridian-mkt.cn/002/images/dropdown_bg.png) repeat-x 0 0;
+	border-bottom: 1px solid #b19857;
+	box-shadow: 0 6px 9px rgba(0,0,0,0.6);
+}
+
+#mainNav .dropdown li {
+	display: block;
+	float: left;
+	width: 100%;
+	/*border-top: 1px solid #011132;*/
+	border-top: 1px solid #171717;
+}
+
+#mainNav .dropdown li a {
+	display: block;
+	float: left;
+	width: 175px;
+	font-family: Arial, Helvetica, sans-serif !important;
+	font-size: 12px !important;
+	color: #FFF !important;
+	text-transform: none !important;
+	padding: 10px 45px 10px 30px !important;
+	/*background: url("/images/icons/arrow_gold_large.png") no-repeat scroll 209px 50% transparent;*/
+	background: transparent;
+}
+#mainNav li.active .dropdown li a {
+	/*background: url("/images/icons/arrow_gold_large.png") no-repeat scroll 209px 50% transparent;*/
+	background: transparent;
+}
+
+#mainNav .dropdown li:hover {
+	background: #a48d51; /* Old browsers */
+	background: -moz-linear-gradient(top,  #a48d51 0%, #ac9455 30%, #8c7844 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#a48d51), color-stop(30%,#ac9455), color-stop(100%,#8c7844)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #a48d51 0%,#ac9455 30%,#8c7844 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #a48d51 0%,#ac9455 30%,#8c7844 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #a48d51 0%,#ac9455 30%,#8c7844 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #a48d51 0%,#ac9455 30%,#8c7844 100%); /* W3C */
+}
+
+	#mainNav li .dropdown li:hover a, #mainNav li.active .dropdown li:hover a, #mainNav li.active .dropdown li.active a {
+		/*background: url(https://gs.meridian-mkt.cn/002/images/icons/arrow_grey_large.png) no-repeat 209px 50%;*/
+
+		font-weight: bold;
+	}
+
+
+#mainNav li:hover .dropdown {
+	display: block;
+}
+
+input, textarea {
+	color: #FFF !important;
+}
+
+
+
+#pupil-portal ul {
+	display: block;
+	float: left;
+	width: 100%;
+	margin-top: -10px !important;
+}
+
+#pupil-portal ul li {
+	position: relative;
+	display: block;
+	float: right;
+	width: 300px;
+	background: none !important;
+	margin: 20px 0 0 0 !important; padding: 0 !important;
+}
+	#pupil-portal ul li.first {
+		float: left;
+		clear: both;
+	}
+	#pupil-portal ul li .image {
+		display: block;
+		float: left;
+		z-index: 1;
+	}
+	#pupil-portal ul li .overlay {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		background: url(https://gs.meridian-mkt.cn/002/images/homepage/homeslider_overlay1.png) no-repeat 0 0;
+		z-index: 2;
+	}
+	#pupil-portal ul li .overlay h2, #pupil-portal ul li .overlay h2 a  {
+		display: block;
+		float: left;
+		width: 100%;
+		height: 100%;
+	}
+		#pupil-portal ul li .overlay h2 span {
+			display: block;
+			float: left;
+			text-transform: uppercase;
+			border-left: 1px solid #b99652;
+			padding: 10px 0 10px 15px;
+			margin-left: 20px;
+			line-height: 1.2;
+			width: 69%;
+			text-shadow: 0 0 4px #000;
+			margin-top: 90px;
+			min-height: 48px;
+			font-size: 0.8em;
+		}
+		#pupil-portal ul li .overlay h2 a {
+			color: #FFF;
+		}
+	#pupil-portal ul li:hover .overlay{
+		background: url(https://gs.meridian-mkt.cn/002/images/homepage/homeslider_overlay2.png) no-repeat 0 0;
+	}
+	
+	
+	
+	
+	
+.map-header {
+	display: block;
+	float: left;
+	width: 100%;
+	clear: both;
+	margin-bottom: 20px;
+	border-bottom: 1px solid #171717;
+}
+	.map-header h2 {
+		display: block;
+		float: left;
+		width: 80%;
+		margin-bottom: 15px;
+	}
+	.map-header a.return {
+		display: block;
+		float: right;
+		background: url(https://gs.meridian-mkt.cn/002/images/icons/controls_prev.png) no-repeat left center;
+		padding-left: 20px;
+		color: #FFF;
+		margin-top: 7px;
+	}
+		.map-header a.return:hover {
+			color: #B19857;
+		}
+.map-subheader {
+	display: block;
+	float: left;
+	width: 100%;
+	clear: both;
+}
+	.map-subheader h1 {
+		display: block;
+		float: left;
+		width: 60%;
+	}
+	.map-subheader ul {
+		width: auto !important;
+		margin: 0 !important; padding: 0 !important;
+	}
+		.map-subheader li {
+			margin: 8px 0 0 10px !important; padding: 0 !important;
+		}
+		
+		
+#sports-results {
+	display: block;
+	float: left;
+	width: 100%;
+}
+
+#sports-results .filter {
+	display: block;
+	float: left;
+	width: 100%;
+	border-bottom: 1px solid #171717;
+	border-top: 1px solid #171717;
+	padding: 20px 0;
+	margin-bottom: 25px;
+}
+	#sports-results .filter input[type="submit"]{
+		margin: 0;
+		width: 190px;
+	}
+
+#sports-results .container {
+	display: block;
+	float: left;
+	width: 100%;	
+	margin-bottom: 10px;
+}
+	#sports-results .container h3 {
+		margin-bottom: 20px;
+	}
+	#sports-results .container a.read-more {
+		display: block;
+		float: right;
+		color: #FFF;
+		background: url(https://gs.meridian-mkt.cn/002/images/icons/arrow_gold_large.png) no-repeat right center;
+		padding-right: 20px;
+		margin-top: 15px;
+	}
+	
+#sports-results table, #article table {
+	width: 100%;
+}
+	#article table {
+		margin-bottom: 25px;
+	}
+	#sports-results table th, #article table th {
+		color: #FFFFFF;
+	    font-family: 'CantarellRegular',Arial,Helvetica,sans-serif;
+	    font-size: 1.154em;
+	    background: url(https://gs.meridian-mkt.cn/002/images/calendar/cal-head_bg.png) repeat-x 0 bottom !important;
+		margin: 0; padding: 10px 9px;
+		border: 1px solid #171717;
+		text-transform: uppercase;
+	}
+	#sports-results table td, #article table td {
+		text-align: center;
+		padding: 8px 9px;
+		border: 1px solid #171717;
+		background: url(https://gs.meridian-mkt.cn/002/images/calendar/calendar-item_bg-alt.png) repeat-x 0 bottom #001031;
+	}
+	
+		#sports-results table tr:nth-child(2n+1) td, #article table tr:nth-child(2n+1) td  {
+			background: url(https://gs.meridian-mkt.cn/002/images/calendar/calendar-item_bg.png) repeat-x 0 bottom #001031;
+		}
+	#sports-results table .date, #sports-results table tr td.desc, 
+	#article table tr td.desc, #article table .date {
+		text-align: left; 
+	}
+	#sports-results table tr .desc, #article table tr .desc {
+		font-size: 0.923em;
+		display: none;
+	}
+	#article table td p {
+		margin-bottom: 0px !important;
+	}
+	
+.lightbox-holder {
+	width: 750px;
+	padding: 25px;
+	background: #FFF;
+	box-shadow: inset 0 0 40px rgba(0,0,0,0.2);
+	color: #333;
+}
+	.lightbox-holder h2 {
+		margin-bottom: 15px;
+		color: #071C4B;
+	}
+	.lightbox-holder .date {
+		display: block;
+		float: left;
+		width: 100%;
+		border-top: 1px solid #ccc;
+		border-bottom: 1px solid #ccc;
+		color: #B79753;
+		font-family: Arial, Helvetica, sans-serif;
+		font-size: 1em;
+		padding: 5px 0;
+		font-weight: bold;
+		margin-bottom: 15px;
+	}
+	
+	
+	
+	
+	
+	
+	
+#CMSSiteMapList li {
+	width: 96%;
+}
+	#CMSSiteMapList li a {
+		display: block;
+		float: left;
+		color: #FFF;
+		font-weight: bold;
+		margin-bottom: 10px;
+	}
+	#CMSSiteMapList li li a {
+		color: #B79753;
+		margin-bottom: 0px;
+	}
+	
+	
+	
+	
+html, body, #wrapper, #homepageWrapper, #homebg  {
+	height: 100%;
+}
+
+#wrapper {
+	background: url(https://gs.meridian-mkt.cn/002/images/icons/loader.gif) no-repeat center 250px;
+}
+	body.home #wrapper  {
+		background: url(https://gs.meridian-mkt.cn/002/images/icons/loader.gif) no-repeat center 370px;	
+	}
+#carouselWrapper {
+	
+	position: absolute;
+	bottom: 180px;
+	bottom: 150px;
+	left: 0px;
+	z-index: 15;	
+}
+
+#carouselWrapper .news-ticker {
+	background: black;
+	margin-bottom: 20px;
+	background: rgb(40,40,38); /* Old browsers */
+	background: -moz-linear-gradient(top,  rgba(40,40,38,1) 0%, rgba(1,1,1,1) 98%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(40,40,38,1)), color-stop(98%,rgba(1,1,1,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  rgba(40,40,38,1) 0%,rgba(1,1,1,1) 98%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  rgba(40,40,38,1) 0%,rgba(1,1,1,1) 98%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  rgba(40,40,38,1) 0%,rgba(1,1,1,1) 98%); /* IE10+ */
+	background: linear-gradient(to bottom,  rgba(40,40,38,1) 0%,rgba(1,1,1,1) 98%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#282826', endColorstr='#010101',GradientType=0 ); /* IE6-9 */
+
+	/*height: 40px;
+	height: 27px;
+	height: 53px; */
+	height: 30px;
+	padding: 13px 30px 12px;
+
+	font-size: 15px;
+
+	width: 890px;
+	margin-top: 11px;
+
+}
+
+#carouselWrapper .news-ticker .item {
+	height: 27px;
+	width: 890px;
+	line-height: 27px;
+}
+
+#carouselWrapper .news-ticker .item-text {
+	float:left;
+	width: 720px;
+}
+
+#carouselWrapper .news-ticker .ticker-read-more {
+	float: right;
+	width: 110px;
+	color: #FFF;
+	font-size: 13px;
+	text-align: right;
+}
+#carouselWrapper .news-ticker .ticker-read-more img {
+	margin-right: 6px;
+	padding-bottom: 4px;
+	vertical-align: middle;
+}
+
+#carouselWrapper .news-ticker .date {
+	color: #B79753;
+	font-weight: bold;
+	padding-right: 8px; 
+}
+
+#homepageWrapper {
+	min-height: 600px;
+}
+
+#content {
+	z-index: 10;
+}
+
+
+#content.home {
+	height: 100%;
+	margin: auto;
+    position: relative;
+    width: 950px;
+    float: none;
+
+}
+	#content.home .holder {
+		height: 100%;
+	}
+	
+.background-image {
+	z-index: 1;
+	display: none;
+}
+
+#subbg {
+	margin-top: 150px;
+}
+
+#headerWrapper {
+	position: fixed;
+	z-index: 20;
+	height: 150px;
+	left: 0; top: 0;
+}
+
+#homebg {
+	overflow: hidden;
+	margin-top: 150px;
+	display: none;
+}
+	#homebg img {
+		left: 0;
+	}
+
+#mainNav li a {
+	font-size: 14px;
+	padding: 15px 41.5px;
+}
+
+#aboutWrapper, #admissionsWrapper, #schoolWrapper, #outsideWrapper, #academicWrapper {
+	margin-top: 149px;
+	background: url(https://gs.meridian-mkt.cn/002/images/test_bg.jpg) no-repeat fixed 0 149px;
+	background-size: auto 100%;
+	padding-bottom: 140px;
+	min-height: 69%;
+}
+	#aboutWrapper.none {
+		background: none;
+	}
+
+#footerUpper {
+	position: relative;
+	background: url(https://gs.meridian-mkt.cn/002/images/bg_opaque-60.png) repeat;
+	margin-top: -140px;
+	display: block;
+	float: left;
+	padding-top: 15px;
+	z-index: 5;
+	height: auto;
+}
+	body.home #footerUpper {
+		position: absolute;
+		bottom: 10px;
+		left: 0;
+		margin-top: 0px;
+		background: none;
+		height: 130px;
+		background: rgba(0,0,0,0.6) !important;
+		z-index: 99;
+	}
+
+#footerUpper .opportunities a {
+	margin-top: 5px;
+}
+
+#leftCol, #rightCol {
+	margin-top: 300px;
+}
+	
+	#leftCol.faded, #leftCol.faded1 {
+		position: relative;
+		background: url(https://gs.meridian-mkt.cn/002/images/bg_opaque-70.png) repeat;
+		box-shadow: 0 0 0;
+	}
+		#leftCol.faded.relative {
+			position: relative;
+		}
+		#leftCol.faded ul, #leftCol.faded1 ul{
+			box-shadow: 0 0 0;
+		}
+		
+	#rightCol.faded1 .standardContent {
+		background: url(https://gs.meridian-mkt.cn/002/images/bg_opaque.png) repeat;
+		box-shadow: 0 0 0;
+	}
+
+#footerLower {
+	padding-top: 9px;
+	height: 34px;
+}
+	#footerLower .quickLink {
+		font-size: 1.385em;
+	}
+	#overlay {
+		margin-bottom: 42px;
+	}
+	#footerLower .content .bgArrow {
+		top: -19px;
+	}
+
+
+
+@media only screen and (max-height: 600px) {
+	
+	#homepageWrapper, #content.home, #homebg, #content.home .holder {
+		height: auto;
+	}
+	#carouselWrapper {
+		position: relative;
+		margin-top: 450px;
+	}
+
+}
+
+
+.prospectusLeft, .prospectusRight {
+	position: relative;
+	display: block;
+	float: left;
+	width: 43%;
+}
+.prospectusRight {
+	float: right;
+	width: 50%;
+}
+	.prospectusRight .button {
+		margin-top: 0px;
+		margin-bottom: 10px;
+		border-radius: 3px;
+		width: 160px;
+		background-position: right center;
+		border-left: 1px solid #333333;
+	}
+	.prospectusRight .prospectusImage {
+	    background: url(https://gs.meridian-mkt.cn/002/images/home_prospectus.png) no-repeat 0 0;
+	    height: 284px;
+	    position: absolute;
+	    right: -110px;
+	    top: -135px;
+	    width: 224px;
+	    z-index: 2000;
+	}
+
+#search_pages {
+	display: block;
+	float: left;
+	width: 100%;
+}
+	#search_pages .page-result {
+		display: block;
+		float: left;
+		width: 100%;
+		border-top: 1px solid #171717;
+		padding: 10px 0;
+	}
+	#search_pages .page-result h4 {
+		margin: 0;
+	}
+
+
+#vacancies h2 {
+	font-size: 1.538em !important;
+}
+	#vacancies h3 {
+		font-size: 1.222em !important;
+		color: #B79753;
+	}
+
+
+h2.inline {
+	display: inline;
+}
+
+.100-percent-width {
+	width: 100% !important;
+}

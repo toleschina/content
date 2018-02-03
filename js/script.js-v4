@@ -1,0 +1,257 @@
+/* Placeholder Script */
+/*! http://mths.be/placeholder v2.0.7 by @mathias */
+;(function(f,h,$){var a='placeholder' in h.createElement('input'),d='placeholder' in h.createElement('textarea'),i=$.fn,c=$.valHooks,k,j;if(a&&d){j=i.placeholder=function(){return this};j.input=j.textarea=true}else{j=i.placeholder=function(){var l=this;l.filter((a?'textarea':':input')+'[placeholder]').not('.placeholder').bind({'focus.placeholder':b,'blur.placeholder':e}).data('placeholder-enabled',true).trigger('blur.placeholder');return l};j.input=a;j.textarea=d;k={get:function(m){var l=$(m);return l.data('placeholder-enabled')&&l.hasClass('placeholder')?'':m.value},set:function(m,n){var l=$(m);if(!l.data('placeholder-enabled')){return m.value=n}if(n==''){m.value=n;if(m!=h.activeElement){e.call(m)}}else{if(l.hasClass('placeholder')){b.call(m,true,n)||(m.value=n)}else{m.value=n}}return l}};a||(c.input=k);d||(c.textarea=k);$(function(){$(h).delegate('form','submit.placeholder',function(){var l=$('.placeholder',this).each(b);setTimeout(function(){l.each(e)},10)})});$(f).bind('beforeunload.placeholder',function(){$('.placeholder').each(function(){this.value=''})})}function g(m){var l={},n=/^jQuery\d+$/;$.each(m.attributes,function(p,o){if(o.specified&&!n.test(o.name)){l[o.name]=o.value}});return l}function b(m,n){var l=this,o=$(l);if(l.value==o.attr('placeholder')&&o.hasClass('placeholder')){if(o.data('placeholder-password')){o=o.hide().next().show().attr('id',o.removeAttr('id').data('placeholder-id'));if(m===true){return o[0].value=n}o.focus()}else{l.value='';o.removeClass('placeholder');l==h.activeElement&&l.select()}}}function e(){var q,l=this,p=$(l),m=p,o=this.id;if(l.value==''){if(l.type=='password'){if(!p.data('placeholder-textinput')){try{q=p.clone().attr({type:'text'})}catch(n){q=$('<input>').attr($.extend(g(this),{type:'text'}))}q.removeAttr('name').data({'placeholder-password':true,'placeholder-id':o}).bind('focus.placeholder',b);p.data({'placeholder-textinput':q,'placeholder-id':o}).before(q)}p=p.removeAttr('id').hide().prev().attr('id',o).show()}p.addClass('placeholder');p[0].value=p.attr('placeholder')}else{p.removeClass('placeholder')}}}(this,document,jQuery));
+
+
+
+function pausecomp(ms) {
+	ms += new Date().getTime();
+	while (new Date() < ms){}
+}
+
+$(window).load(function(){
+	$('.background-image').fadeIn('slow');
+});
+
+$(document).ready(function() {	
+	
+	$('input, textarea').placeholder(); // placeholder support for older browsers
+
+	$('.open-the-rest').click(function(){
+		console.debug($(this).parent().parent().parent().children('.item').slideDown());
+		$(this).parent('').children('.item').slideDown();
+	});
+	
+	// Datepicker
+    $('.datepicker').datepicker({
+        changeMonth: true,
+        changeYear: true,
+        dateFormat: "dd/mm/yy",
+        yearRange: '1970:2013',
+        maxDate: "0"
+    });
+    $('.datepicker-future').datepicker({
+        changeMonth: true,
+        changeYear: true,
+        dateFormat: "dd/mm/yy",
+        yearRange: '0:+10',
+        minDate: "0"
+    });
+	
+	// Generic Fancybox Call
+	$('.lightbox').fancybox({
+		margin: 0,
+		padding: 0
+	});
+	
+	// Sliding Footer Overlay
+	$('#overlay').hide();
+	$('.quickLinkClose').hide();
+	
+	
+	//Strathallians Announcements & News
+	$('.news_subpage:nth-child(2n+1)').addClass('alt');
+	$('.news_subpage .controls a').click(function(){
+		$(this).parent().find('a').toggle();
+		$(this).parent().parent().find('.news_sub_content').slideToggle('slow');
+	})
+	
+	
+	// Quick Links Panel Toggle
+	$('#footerLower .content').click(function() {
+		$('.quickLinkOpen, .quickLinkClose').toggle();
+  		$('#overlay').toggleClass('active').slideToggle('slow');
+	});	
+	// Hide when off focus
+	$('#wrapper').click(function(){
+		if($('#overlay').hasClass('active')){
+			$('#overlay').slideToggle().toggleClass('active');
+			$('.quickLinkOpen, .quickLinkClose').toggle();
+		}else {
+			$('#overlay').removeClass('active').hide();
+		}
+	});
+	
+	
+	// News Filters
+	$("#news-filter-year, #news-filter-category, #contact-hear, .styled-select").selectbox();
+
+
+	$('#calendarWrapper h4').click(function() {										
+		$(this).toggleClass("over");		
+		$(this).next().slideToggle('fast'); 
+			return false;
+	}).next().hide();	
+	
+
+	// Calendar item expanding content
+	$('#calendar-results .item a, #calendarWrapper .item a').click(function() {	
+		$(this).parent().find('a').toggle();	
+		$(this).parent().parent().find('.content').slideToggle('fast');		
+	});
+	
+	
+	//Background cycle hompeage
+	    $('#homebg, .slideshow-test').cycle({ 
+			fx:     'fade',
+			timeout: '6000',
+			sync: 1, 
+		    speedIn:  1500, 
+		    speedOut: 2500,
+		    slideResize: true,
+		    width: '100%',
+		    containerResize: false,
+		    fit: 1,
+		    aspect: true
+		});
+	
+
+	
+	//Homepage Carousel
+		$("#carouselWrapper #carousel").jCarouselLite({
+	        btnNext: "#next",
+	        btnPrev: "#prev",
+	        speed: 900,
+	        visible: 3,
+	        scroll: 1,
+	        start: 0,
+	        circular: true,
+	        auto: 0
+		});
+	
+	$('.news-ticker-item-container').cycle({ 
+	    fx: 	'turnDown'
+	});
+
+	
+	// Custom scroll bars
+	$('#terms-conditions').jScrollPane();
+	$(".background-image").fullscreenBackground();
+	
+
+	
+});
+
+// Font size controls
+var min=9;
+var max=16;
+function increaseFontSize() { 
+    var p = $('body');
+    for(i=0;i<p.length;i++) {
+ 
+	   if(p[i].style.fontSize) {
+		  var s = parseInt(p[i].style.fontSize.replace("px",""));
+	   } else { 
+		  var s = 13;
+	   }
+	   if(s!=max) { 
+		  s += 2;
+	   }
+	   p[i].style.fontSize = s+"px"
+    }
+}
+function decreaseFontSize() {
+    var p = $('body');
+    for(i=0;i<p.length;i++) {
+ 
+	   if(p[i].style.fontSize) {
+		  var s = parseInt(p[i].style.fontSize.replace("px",""));
+	   } else { 
+		  var s = 13;
+	   }
+	   if(s!=min) { 
+		  s -= 2;
+	   }
+	   p[i].style.fontSize = s+"px"
+    }
+}
+
+$(document).ready(function() {
+	
+    $('#selectedGallery').cycle({
+    	fx: 	'fade',
+    	prev: 	'#photoWrap .prev',
+    	next: 	'#photoWrap .next',
+    	after: onAfter,
+    	before: onBefore
+    });
+    
+    function onAfter(el, next_el){
+    	
+    	$(next_el).addClass('active');	    	
+    	
+    	$('#selectedGallery img').each(function(){	    		
+	    	wrapW = $('#selectedGallery').width();
+	    	wrapH = $('#selectedGallery').height();
+	    	imgW = $(this).width();
+	    	imgH = $('#selectedGallery img.active').height();		    	
+	    	imgLeft = (wrapW - imgW)/2;	
+	    	imgTop = (wrapH - imgH)/2;    		    	
+	    	$(this).css({left : imgLeft , top : imgTop});	    		    	
+	    });
+	    	    	
+	    $('#selectedGallery').animate({height : imgH});
+	    
+	    var wrapperH = $('#selectedGallery').height();
+	    
+	    if( wrapperH < 400) {
+	    	$('#photoWrap a.controls').animate({top : '9%'})
+	    } else {
+	    	$('#photoWrap a.controls').animate({top : '230px'})
+	    }
+    }
+    function onBefore(el){
+    	$(el).removeClass('active');
+	}
+});
+
+
+// Map marker click handlers
+$(document).ready(function() {
+	
+	$('#mapContent .immarker .pointer').click(function(){
+		$('#mapContent .immarker').removeClass('active');
+		$(this).parent().addClass('active');
+	});		
+	$('#mapContent .close').click(function(){
+		$(this).parent().parent().parent().removeClass('active');
+	});
+
+
+	// $('.immarker').attr('data-open','false');
+	// $('.immarker').on('click', openImmarker);
+// 
+	// function openImmarker() {
+// 
+		// // Close all other 
+		// $('.imoverlay').hide();
+		// $('.immarker').attr('data-open','false');
+		// $('.immarker').css('background', 'url(/images/icons/map_marker.png) no-repeat');
+		// // Add function to all
+		// $('.immarker').off('click', openImmarker);
+		// $('.immarker').on('click', openImmarker);
+// 
+		// // Hide pointer
+		// $(this).css('background','transparent');
+		// // Open overlay
+		// $(this).children('.imoverlay').fadeIn(80);
+		// $(this).attr('data-open', 'true');
+// 
+		// // remove open function for this
+		// $(this).off( 'click', openImmarker);
+// 
+	// };
+// 
+	// $('.imoverlay > .content > .close').click(function(){
+		// if ( $(this).parent('.content').parent('.imoverlay').parent('.immarker').attr('data-open') == 'true' ) {
+			// $(this).parent('.content').parent('.imoverlay').hide();
+			// $(this).parent('.content').parent('.imoverlay').parent('.immarker').css('background', 'url(/images/icons/map_marker.png) no-repeat');
+			// $(this).parent('.content').parent('.imoverlay').parent('.immarker').attr('data-open', 'false');
+		// }
+	// });
+// 
+    // $('.close').click(function() {
+        // $("li a:contains('Interactive Map')").parent().siblings('.sub.active').removeClass('active');
+    // });
+    
+});
